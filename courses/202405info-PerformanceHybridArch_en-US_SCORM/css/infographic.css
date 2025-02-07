@@ -16,7 +16,7 @@
 }
 
 body {
-    background: #373737 url(globalFiles/images/crosshatch_6.0.png);
+    background: #373737 url(../../globalFiles/images/crosshatch_6.0.png);
     overflow-x: hidden;
     font-size: 16px;
     color: #fdfba5;
