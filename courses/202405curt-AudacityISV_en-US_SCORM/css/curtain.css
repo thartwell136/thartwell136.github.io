@@ -1,0 +1,565 @@
+/* ----------------------------------
+        CURTAIN STYLES
+---------------------------------- */
+
+:root {
+    --sample: #fff;
+    
+    --lt-blue:#00ffff;
+    --lt-green:#75c592;
+    
+    --med-blue: 30 88 190;
+    --dk-blue: 15 29 96;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    xbackground: #373737 url(../globalFiles/images/crosshatch_6.0.png);
+    overflow-x: hidden;
+    font-size: 16px;
+	line-height: 120%;
+    color: #ffffff;
+    background:#0f1e61;
+}
+
+#main_wrapper {overflow: hidden;}
+
+/* Font Styles ------------------------- */
+/* Max viewport: 1400px, Min viewport: 768px */
+p {
+	margin-top: 1.25em;
+	margin-bottom: 1.25em;
+	line-height: 150%;
+    font-size: clamp(1.15em, 1.03em + 0.25vw, 1.25em);
+}
+ul, ol {
+	margin-top: 0.9375em;
+	margin-bottom: 0.9375em;
+	line-height: 150%;
+}
+li {
+    font-size: clamp(1.15em, 1.03em + 0.25vw, 1.25em);  
+    margin-left: 1.25em;
+	margin-top: 0.3125em;
+	margin-bottom: 0.4125em;
+	line-height: 150%;
+}
+
+h1 {
+    font-size: clamp(1.75em, 0.46em + 2.69vw, 2.8125em);
+	font-weight: bold;
+	line-height: 1.1em;
+    color:var(--lt-blue);
+}
+h2 {
+	font-size: clamp(1.5em, 0.89em + 1.27vw, 2em);
+	font-weight: bold;
+	line-height: 1.1em;
+    color:var(--lt-green);
+}
+h3 {font-weight: bold;}
+
+h1 + h2 {margin-top: 0.5em;}
+h2 + h3 {margin-top: 1em;}
+h1 + p {margin-top: 0.7em;}
+h2 + p {margin-top: 0.7em;}
+
+
+/* Default Font Colors ------------------------- */
+.blue { color:#0071c5; }
+.gray { color:#555555; }
+.yellow { color:#feda00; }
+.green { color:#74a72d; }
+.dk_gray { color:#333333; }
+.orange { color:#ffa300;  }
+.dk_orange { color:#fb4b02; }
+.white { color:#fff; }
+.purple { color: #180153; }
+.lt_blue { color:#00adef; }
+.dk_blue { color:#003b70; }
+.black { color:#000000; }
+
+/* 6.0 Colors -------------------------- */
+.blue1 {color:#143e6e;}
+.blue2 {color:#16559b;}
+.blue3 {color:#376bb9;}
+.gray-blue1 {color:#6599d8;}
+.gray-blue2 {color:#69a4d1;}
+.gray-blue3 {color:#6894b9;}
+.gray-blue4 {color:#4c789e;}
+.gray1 {color:#282b2d;}
+.gray2 {color:#545c63;}
+.gray3 {color:#545c63;}
+.gray4 {color:#919da9;}
+.gray5 {color:#9ca9b6;}
+.gray6 {color:#b6bfcb;}
+.gray7 {color:#ecedf1;}
+.green1 {color:#58801f;}
+.green2 {color:#97be2c;}
+.green3 {color:#a6ce39;}
+.green4 {color:#c3d600;}
+
+/* Background Colors ------------------------- */
+.whitebg {background: #fff;}
+.whitebg_trans {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.9);    
+}
+.bluebg {	
+	background: #1c6bb5;
+	background: rgba(28, 107, 181, 0.9);
+}
+.graybg {	
+	background: #333;
+	background: rgba(51, 51, 51, 0.9);
+}
+
+.whitebg .content, .whitebg_trans .content {color: #666666;}
+.bluebg .content {color: #fff;}
+.graybg .content {color: #fff;}
+.bluegradient .content {color: #fff;}
+
+.text_on_right .bluegradient {background: linear-gradient(to right, rgba(20,93,152,0.9) 0%, rgba(3,21,58,0.9) 100%);}
+.text_on_left .bluegradient {background: linear-gradient(to left, rgba(20,93,152,0.9) 0%, rgba(3,21,58,0.9) 100%);}
+.bluegradient_box_solid {
+	background: linear-gradient(to bottom, rgb(20,93,152), rgb(3,21,58));
+	color: #fff;
+}
+.bluegradient_box {
+	background: linear-gradient(to bottom, rgba(20,93,152,0.9), rgba(3,21,58,0.9));
+	color: #fff;
+}
+
+
+/* Panel Styles ------------------------- */
+.panel {
+    margin: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    position: relative;
+}
+.panel.full_height {
+    display: flex;
+    min-height: 100vh;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.full_height .wrapper {
+    display: flex;
+	align-items: center;
+    height: inherit;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.text_on_left .wrapper {
+    width: 50%;
+    justify-content: flex-end;
+}
+.text_on_right {justify-content: flex-end;}
+.text_on_right .wrapper {
+	width: 50%;
+    justify-content: flex-start;
+}
+.text_on_left .content, .text_on_right .content  {
+    width: min(56em, 100%);
+	padding: 5.8em 3em 3em 3em;
+}
+
+.text_on_bot .wrapper, .text_on_top .wrapper, .full_width_text .wrapper {
+    width: min(63vw, 1700px);
+    margin: 0 auto;
+    position: relative;
+    padding-top: 3.75em;
+    padding-bottom: 3.75em;
+}
+
+.text_in_center .wrapper {
+    width: min(63vw, 1700px);
+    margin: 0 auto;
+    position: relative;
+    padding-top: 3.75em;
+    padding-bottom: 3.75em;
+    flex-direction: column;
+}
+.center_box {
+    width: auto;
+	display: inline-block;	
+    margin: 0 auto;
+}
+.center_box.blue_border {
+	border: 1.25em solid #009fe2;
+	border: 1.25em solid rgba(7, 118, 203, 0.5);
+}
+.center_box.white_border {
+	border: 1.25em solid #fff;
+	border: 1.25em solid rgba(255, 255, 255, 0.5);
+}
+.center_box .content {
+	padding: 2.5em;
+    color: #fff;
+}
+
+.text_scroll, .image_scroll {
+    overflow: hidden;
+    background-attachment: fixed;
+}
+/* For mobile iOS: Removes the position fixed due to iOS issue. */
+.ios .text_scroll, .ios .image_scroll {
+	overflow: inherit;
+	background-attachment: inherit;
+}
+
+.image_scroll {background-size: cover;}
+
+.left_half {width: 48%;}
+.right_half {width: 48%;}
+
+.text_content {
+    width: 60%;
+    min-width: 800px;
+}
+.text_content.center_align {margin: 0 auto;}
+.text_content.right_align {margin: 0 0 0 auto;}
+
+
+/* Image Styles ------------------------- */
+/* This class is used for images that are not meant to stretch the full width
+   of the page, like badges or device pictures. */
+.inline_img {display: block;}
+img.center {margin: 0 auto}
+
+/* This class is specifically meant for background images that stretch the
+   width of the page; used for text_on_bot and text_on_top panels. */
+.full_width_img {
+    width: 100%;
+    height: auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display: block;
+    background-size: cover;
+}
+
+/* Used to show an image on the text on left/text on right panels */
+.side_img_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    position: relative;
+}
+
+.side_img_container img {
+    max-width: 90%;
+    max-height: 90%;
+    height: auto;
+    width: auto;
+}
+
+
+/* Misc Styles ------------------------- */
+.left {text-align: left;}
+.center {text-align: center;}
+.right {text-align: right;}
+
+.nomargin {margin: 0px;}
+.notopmargin {margin-top: 0px;}
+.nobottommargin {margin-bottom: 0px;}
+
+.show_chart {display: none;}
+.chart {overflow-x: auto;}
+
+.show_on_HD {display: block;}
+.show_on_MOB {display: none;}
+
+#dev_align {
+    width: calc(100vw - 16px); /* 16px is the width of the scrollbar in Chrome */
+    height: 100vh;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#dev_align div {
+    width: min(63vw, 1700px);
+    height: 100%;
+    outline: 1px solid black;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+/* Chart overflow styles */
+.touchandswipe {
+    display: flex;
+    margin-block: 30px;
+    align-items: center;
+}
+.touchandswipe img {margin-inline-end: 16px;}
+.touchandswipe.hide {
+	display: none;
+}
+
+
+/* ----------------------------------
+            PANEL BACKGROUNDS
+---------------------------------- */
+#panel_2 {
+    background-image: url(../images/2-BG_HD.jpg);
+    xheight:100vh
+}
+#panel_3 {
+    background-image: url(../images/3-BG_HD.jpg);
+}
+#panel_4 {
+    background-image: url(../images/4-BG_HD.jpg);
+}
+#panel_5 {
+    background-image: url(../images/5-BG_HD.jpg);
+    xheight:100vh
+}
+
+
+/* ----------------------------------
+            CUSTOM CODE
+---------------------------------- */
+
+.lt_blue {
+    color:#00ffff;
+}
+.lt_green {
+    color:#75c592;
+}
+
+.top_to_bottom_gradient {background: linear-gradient(to bottom, rgb(var(--dk-blue) / 0.9) 0%, rgb(var(--med-blue) / 0.9) 100%);}
+.left_to_right_gradient {background: linear-gradient(to right, rgb(var(--dk-blue) / 0.9) 0%, rgb(var(--med-blue) / 0.9) 100%);}
+.right_to_left_gradient {background: linear-gradient(to left, rgb(var(--dk-blue) / 0.9) 0%, rgb(var(--med-blue) / 0.9) 100%);}
+
+.center_box .content {
+    padding-inline:min(175px, 9vw);
+    padding-block:3.75em;
+}
+
+#quiz_box {
+	width: 100%;
+    margin: 35px 0 10px;
+    text-align: center;
+}
+#quiz_box .container {
+    font-size: 1.25em;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.8em 1.1em;
+    background: var(--lt-blue);
+    color: #111111;
+    transition: all 0.35s ease;
+}
+#quiz_box a {
+    font-style: normal;
+    font-weight: bold;
+}
+#quiz_box .container:hover {
+    color: var(--lt-blue);
+    background: #111111;
+}
+
+
+/* Code for "start quiz" with a circle/arrow next to it. */
+/*#quiz_box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#quiz_box a {
+    cursor: pointer;
+    font-weight: lighter;
+    color: #C3D600;
+    font-size: 1.4em;
+    line-height: 100%;
+    margin-right: 0.7em;
+}
+
+#quiz_box img {
+    width: auto;
+    height: 2em;
+    transition: transform 0.5s;
+}
+
+#quiz_box:hover img {
+    transform: translateX(15%);
+}*/
+
+#panel_legal {
+  background: #0f1e61;
+  border-top: 0.8em solid var(--lt-blue);
+}
+
+
+/* ----------------------------------
+            MEDIA QUERIES
+---------------------------------- */
+
+/* FOR BELOW DESKTOP --------------------------*/
+@media only screen and (max-width: 1920px) and (min-width: 1025px) {
+    .text_on_bot .wrapper, .text_on_top .wrapper, .full_width_text .wrapper, .text_in_center .wrapper, #panel_legal .wrapper, #dev_align div {
+        width: calc(1210px + ((0.3 * 100vw) + -570px));
+    }
+    .text_on_left .content, .text_on_right .content  {
+        padding-top: calc(92px + ((0.04 * 100vw) + -70px));
+        padding-left: calc(50px + ((0.01 * 100vw) + -20px));
+        padding-right: calc(50px + ((0.01 * 100vw) + -20px));
+        padding-bottom: calc(50px + ((0.01 * 100vw) + -20px));
+    }
+}
+
+
+/* FOR TABLET --------------------------*/
+@media only screen and (max-width: 1024px) { 
+    /* Remove transparency on mobile since text doesn't overlap images */
+    .whitebg_trans {background: #fff;}
+    .bluebg {background: #030f8b;}
+    .graybg {background: #333;}
+    .text_on_right .bluegradient {background: linear-gradient(to right, rgba(20,93,152,1) 0%, rgba(3,21,58,1) 100%);}
+    .text_on_left .bluegradient {background: linear-gradient(to left, rgba(20,93,152,1) 0%, rgba(3,21,58,1) 100%);}
+    .bluegradient_box {background: linear-gradient(to bottom, rgba(20,93,152,1), rgba(3,21,58,1));}
+    
+    .full_height .wrapper {min-height: 0px;}    
+    .panel.full_height {
+        min-height: 0px;
+        background-size: auto 200px;
+        background-size: contain;
+        background-position: center center;
+    }
+    .panel.text_on_left, .panel.text_on_right {
+        background-position: center top !important;
+        padding-top: 56%;
+    }    
+    .text_on_left .wrapper, .text_on_right .wrapper {width: 100%;}    
+    .text_in_center {
+        background-size: cover !important;
+        height: inherit !important;
+    }    
+    
+    .text_on_left .content, .text_on_right .content, .text_on_bot .wrapper, .text_on_top .wrapper, .full_width_text .wrapper, .text_in_center .wrapper, #panel_legal .wrapper, #dev_align div {
+        width: calc(100% - 100px);
+    }
+    
+    .text_on_left .content, .text_on_right .content {
+        padding: 60px 0;
+        margin: 0 auto;
+    }
+    .text_in_center .wrapper {
+        padding-top: 18vw;
+        padding-bottom: 18vw;
+    }
+    
+    .text_scroll, .image_scroll {
+        overflow: inherit;
+        background-attachment: inherit;
+    }
+    
+    .half_container {flex-wrap: wrap;}
+    .left_half, .right_half {width: 100%;}
+    
+    /*.full_width_img {
+        height: 150px !important;
+        background-size: cover;
+    }*/
+    .inline_img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /*Text content goes full width at this screen size.*/
+    .text_content {
+        width: auto;
+        min-width: 0;
+    }
+    
+    .side_img_container {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 55vw;
+    }
+    
+    #dev_align {width: 100vw;}
+    
+    #panel_2 {
+        background-image: url(../images/2-BG_MOB.jpg);
+        height:auto;
+    }
+    #panel_3 {
+        background-image: url(../images/3-BG_MOB.jpg);
+    }
+    #panel_4 {
+        background-image: url(../images/4-BG_MOB.jpg);
+    }
+    #panel_5 {
+        background-image: url(../images/5-BG_MOB.jpg);
+        height:auto;
+    }
+    
+    
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    /* DEFAULT MOBILE STYLING */
+    .show_on_MOB {display: block;}
+    .show_on_HD {display: none;}
+    
+    p {
+        margin-top: 0.6em;
+        margin-bottom: 0.6em;
+        line-height: 140%;
+    }
+    
+    .text_on_left .content, .text_on_right .content, .text_on_bot .wrapper, .text_on_top .wrapper, .full_width_text .wrapper, .text_in_center .wrapper, #panel_legal .wrapper, #dev_align div {
+        width: calc(100% - 80px);
+    }
+    .text_in_center .wrapper {
+        padding-top: 20vw;
+        padding-bottom: 20vw;
+    }
+    #legal_wrapper_full p {word-break: break-word;}
+    
+
+}
+
+
+
+/* FOR MOBILE --------------------------*/
+@media only screen and (max-width: 650px) {
+    .text_on_left .content, .text_on_right .content, .text_on_bot .wrapper, .text_on_top .wrapper, .full_width_text .wrapper, .text_in_center .wrapper, #panel_legal .wrapper, #dev_align div {
+        width: calc(100% - 40px);
+    }
+    .text_on_left .content, .text_on_right .content, .text_on_bot .wrapper, .text_on_top .wrapper, .full_width_text .wrapper, #panel_legal .wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .center_box.white_border {border-width: 10px;}
+    .center_box .content {padding: 16px;}
+    
+    
+
+}
+    
+
+/* FOR TINY MOBILE --------------------------*/
+@media only screen and (max-width: 325px) {
+    .text_on_left .content, .text_on_right .content, .text_on_bot .wrapper, .text_on_top .wrapper, .full_width_text .wrapper, .text_in_center .wrapper, #panel_legal .wrapper, #dev_align div {
+        width: calc(100% - 24px);
+    }
+    .center_box.white_border {border-width: 8px;}
+    .center_box .content {padding: 12px;}
+}

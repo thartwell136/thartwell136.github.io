@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+  <general>
+    <title>
+      <langstring xml:lang="x-none">Enjoy the Ultimate Desktop Experience with Intel® Core™ Ultra Desktop Processors (Series 2)</langstring>
+    </title>
+    <catalogentry>
+      <catalog>TBD</catalog>
+      <entry>
+        <langstring xml:lang="x-none">TBD</langstring>
+      </entry>
+    </catalogentry>
+    <description>
+      <langstring xml:lang="x-none">Discover the incredible performance capabilities of AI accelerated Intel® Core™ Ultra desktop processors (Series 2) and see how these processors compare with high-performing AMD Ryzen 9000 Series processors.</langstring>
+    </description>
+    <keyword>
+      <langstring xml:lang="x-none">202412info-DesktopExperience</langstring>
+    </keyword>
+  </general>
+  <lifecycle>
+    <version>
+      <langstring xml:lang="x-none">1.0</langstring>
+    </version>
+    <status>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Final</langstring>
+      </value>
+    </status>
+  </lifecycle>
+  <metametadata>
+    <metadatascheme>LOM-1.0</metadatascheme>
+  </metametadata>
+  <technical>
+    <format>graphics/gif</format>
+    <format>graphics/jpg</format>
+    <format>text/html</format>
+    <location>./</location>
+  </technical>
+  <rights>
+    <cost>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">no</langstring>
+      </value>
+    </cost>
+    <copyrightandotherrestrictions>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">yes</langstring>
+      </value>
+    </copyrightandotherrestrictions>
+    <description>
+      <langstring xml:lang="x-none">All rights reserved</langstring>
+    </description>
+  </rights>
+  <classification>
+    <purpose>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Educational Objective</langstring>
+      </value>
+    </purpose>
+    <description>
+      <langstring xml:lang="x-none">Learning Content</langstring>
+    </description>
+    <keyword>
+      <langstring xml:lang="x-none">202412info-DesktopExperience</langstring>
+    </keyword>
+  </classification>
+</lom>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" version="1.1" viewBox="0 0 200 200" xml:space="preserve">
+  <defs/>
+  <style>
+    .st0{fill:none;stroke:#c3d600;stroke-width:4;stroke-miterlimit:10}
+  </style>
+  <path d="M100.3 9c50.3 0 91.3 40.9 91.3 91.3s-40.9 91.3-91.3 91.3S9 150.6 9 100.3 49.9 9 100.3 9m0-4C47.7 5 5 47.7 5 100.3s42.7 95.3 95.3 95.3 95.3-42.6 95.3-95.3S152.9 5 100.3 5z" class="st0"/>
+  <path d="M121.1 68.8l31.4 31.4-31.4 31.5m-75.2-31.5h106.3" class="st0"/>
+</svg>

@@ -1,0 +1,743 @@
+/* ----------------------------------
+        PUZZLE GAME STYLES
+---------------------------------- */
+
+:root {
+    --bg-image-HD: none;
+    --bg-image-MOB: none;
+    --puzzle-image: none;
+    --frame-image: none;
+    --piece-01-image: none;
+    --piece-02-image: none;
+    --piece-03-image: none;
+    --piece-04-image: none;
+    --piece-05-image: none;
+    --piece-06-image: none;
+    --piece-07-image: none;
+    --piece-08-image: none;
+    --piece-09-image: none;
+    --piece-10-image: none;
+    --piece-11-image: none;
+    --piece-12-image: none;
+    --piece-13-image: none;
+    --piece-14-image: none;
+    --piece-15-image: none;
+    --piece-16-image: none;
+    --piece-17-image: none;
+    --piece-18-image: none;
+    --piece-19-image: none;
+    --piece-20-image: none;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    overscroll-behavior: none;
+}
+
+body {
+    background: #373737 url(../../globalFiles/images/crosshatch_6.0.png);
+    overflow-x: hidden;
+    font-size: 16px;
+    color: #fff;
+}
+
+#main_wrapper {
+    width:100%;
+    background:#111111;
+    margin: 0 auto;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: var(--bg-image-HD);
+}
+
+#main_container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Font Styles ------------------------- */
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 150%;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 150%;
+}
+
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 150%;
+    font-size: 1em;
+    margin-left: 19px;
+}
+
+h1 {
+    font-size: clamp(2.2em, 1.09em + 1.73vw, 2.5em);
+    font-weight: bold;
+    line-height: 130%;
+}
+
+h2 {
+    font-size: clamp(1.5em, 1.17em + 1.3vw, 1.8em);
+    font-weight: bold;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.375em;
+    font-weight: bold;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    margin-top: 1em;
+}
+
+h4 {
+    font-size: 1.25em;
+    font-weight: normal;
+    margin-top: 20px;
+    line-height: 130%;
+}
+
+.legal p {
+    font-size:.625em;
+    margin: 1em 0;
+    color:#111111;
+}
+
+.white { color:#fff; }
+.black { color:#000000; }
+.blue { color:#0071c5; }
+.lt_blue { color:#00adef; }
+.lt_blue2 { color:#69d6ff; }
+.dk_blue { color:#003b70; }
+.gray { color:#555555; }
+.dk_gray { color:#333333; }
+.yellow { color:#feda00; }
+.green { color:#74a72d; }
+.orange { color:#ffa300;  }
+.dk_orange { color:#fb4b02; }
+.purple { color: #180153; }
+
+.nomargin { margin: 0 !important; }
+.notopmargin, .nomargintop {margin-top: 0 !important;}
+.nobottommargin, .nomarginbottom {margin-bottom: 0 !important;}
+
+
+/* Misc Default Styles ------------------------- */
+
+.left {text-align: left;}
+.center {text-align: center;}
+.right {text-align: right;}
+
+.section {
+    position: relative;
+}
+
+/* Wrap all tables in a div with this class so they display correctly on mobile */
+.chart {overflow-x: auto;}
+
+#quiz_box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+#quiz_box .startQuiz {
+    display: inline-block;
+}
+
+#quiz_box .startQuiz p {
+    font-size: 1.2em;
+    line-height: 1.6rem;
+    font-weight: bold;
+    color: #0071C5;
+    padding: 0.75em 1.5em;
+    margin: 0px auto;
+    background-color: #fff;
+    box-shadow: 0.2em -0.325em 0.075em 0em rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    cursor: pointer;
+}
+
+#quiz_box.locked {
+    filter: saturate(0%);
+    pointer-events: none;
+}
+
+/*#quiz_box p:hover {background-color: #659E44;}
+#quiz_box p:active {background-color: #89D359;}*/
+
+/* ----------------------------------
+            CUSTOM CODE
+---------------------------------- */
+
+.wrapper {
+    width: min(1240px, 100%);
+    height: auto;
+    margin-inline: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 44.6% 1fr;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: max(1vw, 10px);
+    user-select: none;
+}
+
+.piece_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+
+.puzzle_wrapper {
+    width: auto;
+    position: relative;
+    align-self: center;
+}
+
+.puzzle_wrapper .inner {
+    position: relative;
+    display: inline-block;
+}
+
+.piece_style {
+    background: var(--puzzle-image);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.piece_01_style {
+    width: 165px;
+    aspect-ratio: 165 / 203;
+    -webkit-mask-image: var(--piece-01-image);
+    mask-image: var(--piece-01-image);
+    background-position: 0% 0%;
+}
+
+.piece_02_style {
+    width: 249px;
+    aspect-ratio: 249 / 165;
+    -webkit-mask-image: var(--piece-02-image);
+    mask-image: var(--piece-02-image);
+    background-position: 29.4% 0%;
+}
+
+.piece_03_style {
+    width: 172px;   
+    aspect-ratio: 172 / 203;
+    -webkit-mask-image: var(--piece-03-image);
+    mask-image: var(--piece-03-image);
+    background-position: 67.4% 0%;
+}
+
+.piece_04_style {
+    width: 203px; 
+    aspect-ratio: 203 / 165;
+    -webkit-mask-image: var(--piece-04-image);
+    mask-image: var(--piece-04-image);
+    background-position: 100% 0%;
+}
+
+.piece_05_style {
+    width: 203px;
+    aspect-ratio: 203 / 172;
+    -webkit-mask-image: var(--piece-05-image);
+    mask-image: var(--piece-05-image);
+    background-position: 0% 24.4%;
+}
+
+.piece_06_style {
+    width: 172px;
+    aspect-ratio: 172 / 249;
+    -webkit-mask-image: var(--piece-06-image);
+    mask-image: var(--piece-06-image);
+    background-position: 32.9% 20.7%;
+}
+
+.piece_07_style {
+    width: 249px;
+    aspect-ratio: 249 / 172;
+    -webkit-mask-image: var(--piece-07-image);
+    mask-image: var(--piece-07-image);
+    background-position: 70.9% 24.3%;
+}
+
+.piece_08_style {
+    width: 165px;
+    aspect-ratio: 165 / 249;
+    -webkit-mask-image: var(--piece-08-image);
+    mask-image: var(--piece-08-image);
+    background-position: 100% 20.7%;
+}
+
+.piece_09_style {
+    width: 165px;
+    aspect-ratio: 165 / 249;
+    -webkit-mask-image: var(--piece-09-image);
+    mask-image: var(--piece-09-image);
+    background-position: 0% 49.9%;
+}
+
+.piece_10_style {
+    width: 249px;
+    aspect-ratio: 249 / 172;
+    -webkit-mask-image: var(--piece-10-image);
+    mask-image: var(--piece-10-image);
+    background-position: 29.2% 50%;
+}
+
+.piece_11_style {
+    width: 172px;
+    aspect-ratio: 172 / 249;
+    -webkit-mask-image: var(--piece-11-image);
+    mask-image: var(--piece-11-image);
+    background-position: 67.1% 49.9%;
+}
+
+.piece_12_style {
+    width: 203px;
+    aspect-ratio: 203 / 172;
+    -webkit-mask-image: var(--piece-12-image);
+    mask-image: var(--piece-12-image);
+    background-position: 99.8% 50.2%;
+}
+
+.piece_13_style {
+    width: 203px;
+    aspect-ratio: 203 / 172;
+    -webkit-mask-image: var(--piece-13-image);
+    mask-image: var(--piece-13-image);
+    background-position: 0% 75.6%;
+}
+
+.piece_14_style {
+    width: 172px;
+    aspect-ratio: 172 / 249;
+    -webkit-mask-image: var(--piece-14-image);
+    mask-image: var(--piece-14-image);
+    background-position: 32.8% 79.3%;
+}
+
+.piece_15_style {
+    width: 249px;
+    aspect-ratio: 249 / 172;
+    -webkit-mask-image: var(--piece-15-image);
+    mask-image: var(--piece-15-image);
+    background-position: 70.7% 75.6%;
+}
+
+.piece_16_style {
+    width: 165px;
+    aspect-ratio: 165 / 249;
+    -webkit-mask-image: var(--piece-16-image);
+    mask-image: var(--piece-16-image);
+    background-position: 100% 79.3%;
+}
+
+.piece_17_style {
+    width: 165px;
+    aspect-ratio: 165 / 203;
+    -webkit-mask-image: var(--piece-17-image);
+    mask-image: var(--piece-17-image);
+    background-position: 0% 100%;
+}
+
+.piece_18_style {
+    width: 249px;
+    aspect-ratio: 249 / 165;
+    -webkit-mask-image: var(--piece-18-image);
+    mask-image: var(--piece-18-image);
+    background-position: 29.7% 100%;
+}
+
+.piece_19_style {
+    width: 172px;
+    aspect-ratio: 172 / 203;
+    -webkit-mask-image: var(--piece-19-image);
+    mask-image: var(--piece-19-image);
+    background-position: 67.2% 100%;
+}
+
+.piece_20_style {
+    width: 203px;
+    aspect-ratio: 203 / 165;
+    -webkit-mask-image: var(--piece-20-image);
+    mask-image: var(--piece-20-image);
+    background-position: 100% 100%;
+}
+
+
+#puzzle_base {
+    width: auto;
+    max-width: 100%;
+    max-height: 91vh;
+    display: block;
+    pointer-events: none;
+}
+
+.piece_style {
+    position: absolute;
+    user-select: none;
+    display: block;
+}
+
+.piece_style.fixed_piece {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fixed_piece img {
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#piece_01_fixed {
+    top: 3.1%;
+    left: 4.1%;
+    width: 24.02%;
+}
+
+#piece_02_fixed {
+    top: 3.1%;
+    left: 20.5%;
+    width: 36.24%;
+}
+
+#piece_03_fixed {
+    top: 3.1%;
+    left: 49.2%;
+    width: 25.04%;
+}
+
+#piece_04_fixed {
+    top: 3.1%;
+    left: 66.5%;
+    width: 29.55%;
+}
+
+#piece_05_fixed {
+    top: 21%;
+    left: 4.1%;
+    width: 29.55%;
+}
+
+#piece_06_fixed {
+    top: 16.3%;
+    left: 26.1%;
+    width: 25.04%;
+}
+
+#piece_07_fixed {
+    top: 20.8%;
+    left: 43.6%;
+    width: 36.24%;
+}
+
+#piece_08_fixed {
+    top: 16.3%;
+    left: 72%;
+    width: 24.02%;
+}
+
+#piece_09_fixed {
+    top: 35%;
+    left: 4.1%;
+    width: 24.02%;
+}
+
+#piece_10_fixed {
+    top: 39.7%;
+    left: 20.4%;
+    width: 36.24%;
+}
+
+#piece_11_fixed {
+    top: 35%;
+    left: 49.1%;
+    width: 25.04%;
+}
+
+#piece_12_fixed {
+    top: 39.6%;
+    left: 66.4%;
+    width: 29.55%;
+}
+
+#piece_13_fixed {
+    top: 58.4%;
+    left: 4.1%;
+    width: 29.55%;
+}
+
+#piece_14_fixed {
+    top: 53.8%;
+    left: 26.1%;
+    width: 25.04%;
+}
+
+#piece_15_fixed {
+    top: 58.3%;
+    left: 43.5%;
+    width: 36.24%;
+}
+
+#piece_16_fixed {
+    top: 53.8%;
+    left: 72%;
+    width: 24.02%;
+}
+
+#piece_17_fixed {
+    top: 72.5%;
+    left: 4.1%;
+    width: 24.02%;
+}
+
+#piece_18_fixed {
+    top: 77%;
+    left: 20.6%;
+    width: 36.24%;
+}
+
+#piece_19_fixed {
+    top: 72.5%;
+    left: 49%;
+    width: 25.04%;
+}
+
+#piece_20_fixed {
+    top: 77%;
+    left: 66.5%;
+    width: 29.55%;
+}
+
+
+
+.puzzle_wrapper #complete_puzzle {
+    width: 92%;
+    aspect-ratio: 633 / 791;
+    height: auto;
+    pointer-events: none;
+    position: absolute;
+    top: 3.1%;
+    left: 4.1%;
+    background: var(--puzzle-image);
+    background-size: 100% 100%;
+}
+
+/* PUZZLE CLOSE BUTTON ----------------------------------------- */
+#puzzle_close_wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: -4.8%;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#puzzle_close {
+    background-image: var(--frame-image);
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 4% 5% 4.8%;
+    text-align: center;
+    width: min(318px, 75%);
+    aspect-ratio: 318 / 105;
+    margin-inline: auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* CONGRATULATIONS SCREEN ----------------------------------------- */
+
+#congrats_box {
+    background: black;
+    border: 12px solid #fff;
+    padding: 5% 6% 7%;
+    text-align: center;
+    width: min(600px, 100%);
+    margin-inline: auto;
+    margin-block: 2vw;
+}
+
+#congrats_box .quit_button {
+    background: #fff;
+    padding: 0.8em 1.3em;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#congrats_box .quit_button p {
+    color: #004892;
+    margin: 0;
+}
+
+
+/* INSTRUCTIONS STUFF ----------------------------------------- */
+.gray_cover_style {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(0,0,0,0.75);
+    z-index: 50;
+}
+
+.instructions_wrapper_outer {
+    width: min(600px, 94vw);
+    min-height: 100vh;
+    margin-inline: auto;
+    padding-block: 3vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.instructions_wrapper_outer .instructions_wrapper_inner {
+    width: 100%;
+    background-color: #0c3a92;
+    position: relative;
+}
+
+.instructions_wrapper_outer .instructions_text {
+    margin: 0 auto;
+    padding: 1em 2em;
+}
+
+.instructions_wrapper_outer .instructions_close {
+    cursor: pointer;
+    position: relative;
+    height: 3.75em;
+	background-color: #27343c;
+    border-top: 8px solid #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.instructions_X {
+	height: 2.8125em;
+    width: 2.8125em;
+    position: relative;
+}
+
+
+
+
+/* Keep these near the bottom to make sure your custom code doesn't accidentally overwrite these classes */
+.show_on_HD {display: block;}
+.show_on_MOB {display: none;}
+
+/* ----------------------------------
+            MEDIA QUERIES
+---------------------------------- */
+
+
+/* mobile */
+
+@media only screen and (max-width: 1023px) {
+
+    h1, h2, h3, h4, p, ul, li, span {
+        text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+	p, ul, li {line-height: 140%;}
+    .show_on_MOB {display: block;}
+    .show_on_HD {display: none;}
+
+
+    #main_container {
+        align-items: flex-start;
+    }
+
+	.wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .piece_wrapper {
+        min-height: 28vh;
+        order: 1;
+    }
+    .puzzle_wrapper {
+        margin-inline: auto;
+    }
+    #puzzle_base {
+        max-height: 70vh;
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 1023px) and (orientation: landscape) {
+    #puzzle_base {
+        max-height: 96vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    #main_wrapper {
+        background-position: 50% 0%;
+        background-image: var(--bg-image-MOB);
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #main_container {
+        padding-top: 3.5em;
+    }
+
+    #congrats_box {
+        border: 7px solid #fff;
+        padding: 5% 3% 7%;
+    }
+    
+    .instructions_wrapper_outer .instructions_text {
+        padding: 1em;
+    }
+    
+}
+

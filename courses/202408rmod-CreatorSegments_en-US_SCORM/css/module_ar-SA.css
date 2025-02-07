@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1, h2, h3, h4, p, ul, ol, td, #quiz-body {direction: rtl;}
+
+ul li {
+    list-style-type: none !important; 
+}
+
+ul li:before {
+    content: "•";
+    right: -10px;
+    position: relative;
+}
+
+.chart {
+    direction: rtl;
+}
+
+.pageStyle1 .circle_wrap > .inner {
+    flex-direction: row-reverse;
+}
+
+#wrapper_2_2 .text .img_cont {
+    margin-left: auto;
+}

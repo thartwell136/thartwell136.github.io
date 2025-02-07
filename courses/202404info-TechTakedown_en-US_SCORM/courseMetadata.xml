@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+  <general>
+    <title>
+      <langstring xml:lang="x-none">Tech Takedown: 13th Gen Intel® Core™ i9 Mobile Processor vs. M3 Max MacBook Pro</langstring>
+    </title>
+    <catalogentry>
+      <catalog>TBD</catalog>
+      <entry>
+        <langstring xml:lang="x-none">TBD</langstring>
+      </entry>
+    </catalogentry>
+    <description>
+      <langstring xml:lang="x-none">Watch as a 13th Gen Intel® Core™ i9 mobile processor-powered laptop and an M3 Max MacBook Pro go head-to-head in categories like performance, design, system, and compatibility.</langstring>
+    </description>
+    <keyword>
+      <langstring xml:lang="x-none">202404info-TechTakedown</langstring>
+    </keyword>
+  </general>
+  <lifecycle>
+    <version>
+      <langstring xml:lang="x-none">1.0</langstring>
+    </version>
+    <status>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Final</langstring>
+      </value>
+    </status>
+  </lifecycle>
+  <metametadata>
+    <metadatascheme>LOM-1.0</metadatascheme>
+  </metametadata>
+  <technical>
+    <format>graphics/gif</format>
+    <format>graphics/jpg</format>
+    <format>text/html</format>
+    <location>./</location>
+  </technical>
+  <rights>
+    <cost>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">no</langstring>
+      </value>
+    </cost>
+    <copyrightandotherrestrictions>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">yes</langstring>
+      </value>
+    </copyrightandotherrestrictions>
+    <description>
+      <langstring xml:lang="x-none">All rights reserved</langstring>
+    </description>
+  </rights>
+  <classification>
+    <purpose>
+      <source>
+        <langstring xml:lang="x-none">LOMv1.0</langstring>
+      </source>
+      <value>
+        <langstring xml:lang="x-none">Educational Objective</langstring>
+      </value>
+    </purpose>
+    <description>
+      <langstring xml:lang="x-none">Learning Content</langstring>
+    </description>
+    <keyword>
+      <langstring xml:lang="x-none">202404info-TechTakedown</langstring>
+    </keyword>
+  </classification>
+</lom>

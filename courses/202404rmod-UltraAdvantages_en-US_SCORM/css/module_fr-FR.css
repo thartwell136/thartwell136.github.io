@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+
+#wrapper_3_2 .col.third {
+    width:min(480px, calc(50% - var(--padding-block)));
+}

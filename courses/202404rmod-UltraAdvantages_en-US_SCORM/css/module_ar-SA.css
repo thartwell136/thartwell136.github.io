@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1, h2, h3, h4, p, ul, ol, td, #quiz-body {direction: rtl;}
+
+ul li {
+    list-style-type: none !important; 
+}
+
+ul li:before {
+    content: "•";
+    right: -10px;
+    position: relative;
+}
+
+.chart {
+    direction: rtl;
+}
+
+.popup_1_style .text .addIO b {
+    margin-top:.2em;
+}
+
+#wrapper_2_2_2 .num_wrapper, #quiz_box {
+    direction:rtl;
+}
+
+#wrapper_3_4 .square_right, #wrapper_4_2 .square_right {
+    top: 15px;
+}
+#wrapper_3_4 .square_left, #wrapper_4_2 .square_left {
+    bottom:-15px;
+}

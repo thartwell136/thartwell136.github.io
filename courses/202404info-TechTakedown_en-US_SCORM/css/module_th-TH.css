@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1, h2, h3, h4 {
+    line-height: 150%;
+}
+
+p, ul, li {
+    line-height: 160%;
+}
+
+.benchmark .upto p {
+    line-height: 150%;
+}
+
+.benchmark .upto p b, .benchmark .upto p.onpar b {
+    line-height: 120%;
+}

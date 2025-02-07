@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html class="infographic_course">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title xdata-localeid="000000">Creature Sweeper</title>
+
+    <link rel="stylesheet" href="globalFiles/css/global-default-1.css">
+    <!-- <link rel="stylesheet" href="globalFiles/css/quiz-3.css"/> -->
+    <link rel="stylesheet" href="css/default.css">
+    <link id="Update-Main-CSS" rel="stylesheet" href="css/minesweeper_game.css">
+    <link type="text/css" rel="stylesheet" href="globalFiles/css/dev-tools-2.css">
+</head>
+
+<body class="loading_no_scrolling">
+
+<div id="course_wrapper_2">
+
+    <div id="preloader" style="background-color: #0068b4; width: 100%; height: 100%; position: fixed; z-index: 600;">
+        <div id="preloader_wrapper">
+            <img id="loading_gif" alt="" width="200" height="200" src="globalFiles/images/loading3.gif">
+        </div>
+    </div>
+
+    <!--NAV AREA-->
+    <div id="nav_wrapper">
+        <div id="nav_icon_wrapper">
+            <svg id="nav_menu_X" class="course_quit" version="1.1"  x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                <rect x="7.9" y="24" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -10.3567 25.0062)" fill="#FFFFFF" width="34.3" height="2"/>
+                <rect x="7.9" y="24" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 25.0082 60.3682)" fill="#FFFFFF" width="34.3" height="2"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div id="main_wrapper">
+        <div id="main_container" class="section">
+            <div class="wrapper">
+                <div class="minesweeper">
+                    <header>
+                      <div class="digital">
+                        <div id="mines_a"></div>
+                        <div id="mines_b"></div>
+                        <div id="mines_c"></div>
+                      </div>
+
+                      <div class="game_button">
+                        <div class="face smile" id="game_button"></div>
+                      </div>
+
+                      <div class="digital">
+                        <div id="timer_a"></div>
+                        <div id="timer_b"></div>
+                        <div id="timer_c"></div>
+                      </div>
+                    </header>
+
+                    <div id="grid"></div>
+                    <div class="button-container">
+                      <div class="button button-reveal selected"><div class="icon"></div></div>
+                      <div class="button button-flag"><div class="icon"></div></div>
+                      <!--<div class="button button-reveal selected"><img class="icon" src="images/m-0.png" width="42" height="42" alt=""/></div>
+                      <div class="button button-flag"><img class="icon" src="images/flag.png" width="42" height="42" alt=""/></div>-->
+                      <!--<div class="button button-reveal selected">REVEAL</div>
+                      <div class="button button-flag">FLAG</div>-->
+                    </div>
+                    
+                    <div id="game_message_wrapper">
+                        <div class="message_inner">
+                            <div class="lose_message">
+                                <h2 class="intelOne" data-localeid="279984">Oh No, You Uncovered a Creature!</h2>
+                                <p data-localeid="279985">No reward for you this time around.</p>
+                            </div>
+                            <div class="win_message">
+                                <h2 class="intelOne" data-localeid="279982">You Defeated the Creature Sweeper!</h2>
+                                <p data-localeid="279983">Nice work! Head back to your Map to see what you’ve earned.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="game_close_wrapper">
+                    <div id="game_close" class="course_quit">
+                        <h2 class="intelOne" data-universalid="208491">CLOSE</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- INSTRUCTIONS CLICK HTML -->
+          <div id="instructions_wrapper" class="gray_cover_style">
+              <div class="instructions_wrapper_outer">
+                  <div class="instructions_wrapper_inner">
+                      <div class="instructions_text">
+                          <h3 class="intelOne" data-universalid="203409">INSTRUCTIONS:</h3>
+                          <p data-localeid="279981">Click on cells to reveal creatures and their proximity to you. If a revealed cell shows a creature, you lose. If a revealed cell shows a number, that is the number of creatures touching that cell. Place a plant on cells you think contain creatures. Correctly marking all creatures with plants will earn you a reward. Happy sweeping!</p>
+                      </div>
+                      <div class="instructions_close">
+                          <svg class="instructions_X" version="1.1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" style="display: block; opacity: 1;">
+                              <rect x="7.9" y="24" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -10.3567 25.0062)" fill="#FFFFFF" width="34.3" height="2"></rect>
+                              <rect x="7.9" y="24" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 25.0082 60.3682)" fill="#FFFFFF" width="34.3" height="2"></rect>
+                          </svg>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+    </div>
+
+    <!--Drop down to change the languages for review-->
+    <div id="dev_tool_wrapper"></div>
+
+</div>
+
+    <script type="text/javascript" src="globalFiles/js/browser-check-1.js"></script>
+    <script type="text/javascript" src="globalFiles/js/jquery/jquery-3.1.1.min.js"></script>
+    <!--<script type="text/javascript" src="../utilities/motech.js"></script>-->
+    <!--<script type="text/javascript" src="globalFiles/js/pxloader/PxLoader.js"></script>
+    <script type="text/javascript" src="globalFiles/js/pxloader/PxLoaderImage.js"></script>-->
+    <script type="text/javascript" src="globalFiles/js/gsap3/gsap-3.11.3.min.js"></script>
+    <!--<script type="text/javascript" src="globalFiles/js/gsap3/Draggable-3.11.3.min.js"></script>-->
+
+    <script type="text/javascript" src="globalFiles/js/global-config-1.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="scorm/scormtracker.js"></script>
+	<script type="text/javascript" src="scorm/SCORM_API_wrapper.js"></script>
+	<script type="text/javascript" src="scorm/scorm_settings.js"></script>
+    <script type="text/javascript" src="globalFiles/js/dev-tools-3.js"></script>
+    <script type="text/javascript" src="globalFiles/js/api-2.js"></script>
+    
+    <!-- CUSTOM QUIZ -->
+    <script type="text/javascript" src="js/quiz-3-custom.js"></script>
+    <script id="offline-version" type="text/javascript" src="js/default.js"></script>
+    <script type="text/javascript" src="globalFiles/js/text-replace-3.js"></script>
+    <script type="text/javascript" src="js/interactive.js"></script>
+    
+    <!-- CUSTOM FILES -->
+    <!-- Note: Number class constructor changed to TileNumber due to interference with globalFiles -->
+    <script type="text/javascript" src="js/minefield.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <!--<script type="text/javascript" src="js/animation.js"></script>-->
+    <!-- <script type="text/javascript" src="js/loader-images.js"></script> -->
+
+</body>
+</html>

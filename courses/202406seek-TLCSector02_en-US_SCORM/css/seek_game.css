@@ -1,0 +1,822 @@
+/* ----------------------------------
+        PUZZLE GAME STYLES
+---------------------------------- */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: #373737 url(../../globalFiles/images/crosshatch_6.0.png);
+    overflow-x: hidden;
+    font-size: 16px;
+    color: #fff;
+}
+
+#main_wrapper {
+    width:100%;
+    margin: 0 auto;
+    background: url(../images/global_background_HD.jpg) 50% 50% / cover no-repeat;
+}
+
+#main_container {
+    width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+
+
+/* Font Styles ------------------------- */
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 150%;
+    font-size: 1.25em;
+    color: #fff;
+}
+
+ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 150%;
+}
+
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 150%;
+    font-size: 1em;
+    margin-left: 19px;
+}
+
+h1 {
+    font-size: clamp(2.2em, 1.09em + 1.73vw, 2.5em);
+    font-weight: bold;
+    line-height: 130%;
+}
+
+h2 {
+    font-size: clamp(1.5em, 1.17em + 1.3vw, 1.8em);
+    font-weight: bold;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.375em;
+    font-weight: bold;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    margin-top: 1em;
+}
+
+h4 {
+    font-size: 1.25em;
+    font-weight: normal;
+    margin-top: 20px;
+    line-height: 130%;
+}
+
+.legal p {
+    font-size:.625em;
+    margin: 1em 0;
+    color:#111111;
+}
+
+.white { color:#fff; }
+.black { color:#000000; }
+.blue { color:#0071c5; }
+.lt_blue { color:#00adef; }
+.lt_blue2 { color:#69d6ff; }
+.dk_blue { color:#003b70; }
+.gray { color:#555555; }
+.dk_gray { color:#333333; }
+.yellow { color:#feda00; }
+.green { color:#74a72d; }
+.orange { color:#ffa300;  }
+.dk_orange { color:#fb4b02; }
+.purple { color: #180153; }
+
+.nomargin { margin: 0 !important; }
+.notopmargin, .nomargintop {margin-top: 0 !important;}
+.nobottommargin, .nomarginbottom {margin-bottom: 0 !important;}
+
+
+/* Misc Default Styles ------------------------- */
+
+.left {text-align: left;}
+.center {text-align: center;}
+.right {text-align: right;}
+
+.section {
+    position: relative;
+}
+
+/* Wrap all tables in a div with this class so they display correctly on mobile */
+.chart {overflow-x: auto;}
+
+#quiz_box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+#quiz_box .startQuiz {
+    display: inline-block;
+}
+
+#quiz_box .startQuiz p {
+    font-size: 1.2em;
+    line-height: 1.6rem;
+    font-weight: bold;
+    color: #0071C5;
+    padding: 0.75em 1.5em;
+    margin: 0px auto;
+    background-color: #fff;
+    box-shadow: 0.2em -0.325em 0.075em 0em rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    cursor: pointer;
+}
+
+#quiz_box.locked {
+    filter: saturate(0%);
+    pointer-events: none;
+}
+
+/*#quiz_box p:hover {background-color: #659E44;}
+#quiz_box p:active {background-color: #89D359;}*/
+
+/* ----------------------------------
+            CUSTOM CODE
+---------------------------------- */
+
+:root {
+    --base-font-size:16;
+}
+
+h1, h2, h3, h4, p, li {
+    --max-font-size:16;
+    --min-font-size:16;
+    --max-screen-width:1400;
+    --min-screen-width:450;
+    
+    --font-size-calc:calc( (var(--min-font-size) * 1px) + (var(--max-font-size) - var(--min-font-size)) * ((100vw - (var(--min-screen-width) * 1px)) / (var(--max-screen-width) - var(--min-screen-width))));
+    --clamp-max: calc( (var(--max-font-size) / var(--base-font-size)) * 1em);
+    --clamp-min: calc( (var(--min-font-size) / var(--base-font-size)) * 1em);
+}
+
+h1 {
+   --max-font-size:30;
+   --min-font-size:28;
+   font-size:clamp(var(--clamp-min), var(--font-size-calc), var(--clamp-max));
+}
+h2 {
+   --max-font-size:22;
+   --min-font-size:20;
+   font-size:clamp(var(--clamp-min), var(--font-size-calc), var(--clamp-max));
+}
+p.p20 {
+   --max-font-size:20;
+   --min-font-size:18;
+   font-size:clamp(var(--clamp-min), var(--font-size-calc), var(--clamp-max));
+}
+p.p18 {
+   --max-font-size:18;
+   --min-font-size:16;
+   font-size:clamp(var(--clamp-min), var(--font-size-calc), var(--clamp-max));
+}
+
+.wrapper {
+	/* 1346 x 754 */
+	--main-width:1346;
+	--main-height:754;
+    /* not sure why this works */
+	--border-width:13;
+	--border-size: calc( var(--border-width) * 2 );
+	
+	/* wrapper needs the border added x2 */
+	--wrapper-width: calc( (var(--main-width) + var(--border-size)) * 1px );
+		
+    width: min(var(--wrapper-width), 100%);
+    height: inherit;
+    margin-inline: auto;
+    position: relative;
+	
+    box-sizing: border-box;
+    margin: max(1vw, 10px);
+    user-select: none;
+    xoutline: 1px solid white;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+    
+    filter: drop-shadow(0px 1px 6px rgba(7, 5, 1, 0.5));
+}
+
+/* BORDER STYLES */
+.mi1 {  
+    position:relative;
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+    /* fix for ios */
+    pointer-events:none;
+    
+    max-width:calc( (var(--main-width) + var(--border-size)) * 1px );
+	max-height:calc( (var(--main-height) + var(--border-size)) * 1px );
+    
+	padding: 4px; /*I need this for these paddings for the thickness of border it creates*/
+    background: #453999;
+    background: linear-gradient(180deg, #c0e5e2 0%, #1c2a33 100%);
+    clip-path: polygon(
+        54px 0, 
+        calc(100% - 54px) 0, 
+        100% 54px,
+        100% calc(100% - 54px),
+        calc(100% - 54px) 100%,
+        54px calc(100% - 0px),
+        0 calc(100% - 54px),
+        0 54px
+    );
+}
+
+.mi2 {    
+    position:relative;
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+    /* fix for ios */
+    pointer-events:none;
+    
+    padding: 4px;
+    background: #a154d6;
+    background: linear-gradient(180deg, #1b6b86 0%, #2f4c52 100%);
+    clip-path: polygon(
+        52px 0,
+        calc(100% - 52px) 0,
+        100% 52px,
+        100% calc(100% - 52px),
+        calc(100% - 52px) 100%,
+        52px calc(100% - 0px),
+        0 calc(100% - 52px),
+        0 52px
+    );
+}
+
+.mi3 {   
+    position:relative;
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+    /* fix for ios */
+    pointer-events:none;
+    
+    padding: 5px;
+    background: #302a80;
+    background: linear-gradient(0deg, #c0e5e2 0%, #1c2a33 100%);
+    clip-path: polygon(
+        50px 0,
+        calc(100% - 50px) 0,
+        100% 50px,
+        100% calc(100% - 50px),
+        calc(100% - 50px) 100%,
+        50px calc(100% - 0px),
+        0 calc(100% - 50px),
+        0 50px
+    );
+}
+
+.mi4 {
+    position:relative;
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+    /* fix for ios */
+    pointer-events:none;
+    
+    xpadding: 45px;
+    background: #0e100f;    
+
+    clip-path: polygon(
+        48px 0,
+        calc(100% - 48px) 0,
+        100% 48px,
+        100% calc(100% - 48px),
+        calc(100% - 48px) 100%,
+        48px calc(100% - 0px),
+        0 calc(100% - 48px),
+        0 48px
+    );
+    xbox-shadow: inset 0px 0px 113.1px 60.9px rgba(13, 13, 13, 0.49);
+} 
+
+.mi4::after {
+  box-shadow: inset 0px 0px 113.1px 60.9px rgba(13, 13, 13, 0.49);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* fix for ios */
+  pointer-events:none;
+}
+
+/* SEEK SCROLL */
+.seek_scroll {
+    
+	position: relative;
+	width:100%;
+	height:100%;
+	
+	xmax-width:calc( (var(--main-width) + var(--border-size)) * 1px );
+	xmax-height:calc( (var(--main-height) + var(--border-size)) * 1px );
+	
+	overflow:auto;
+	box-sizing: border-box;
+	overscroll-behavior:none;
+}
+
+.seek_wrapper {
+    position: absolute;
+	
+	min-width:100%;
+	min-height: 100%;
+	
+	aspect-ratio: calc( var(--main-width) / var(--main-height) );
+	overflow: hidden;
+}
+
+.seek_wrapper > .base {
+	position: absolute;
+	top:0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+    user-select:none;
+    pointer-events:none;
+}
+
+.seek_wrapper .blocker {
+	position: absolute;
+	top:0;
+	left: 0;
+	width:100%;
+	height: 100%;
+	background:rgba(0,0,0,0.5);
+}
+
+.noScroll {
+	overflow: hidden !important;
+}
+
+.seek_wrapper > .base.completed {
+    xopacity:0;
+    z-index:1;
+}
+
+/* ICON WRAPPER ----------------------------------------- */
+.icon_wrapper {    
+	text-align: center;
+	position: relative;
+	box-sizing: border-box;
+	
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	gap: 2.5% 2.5%;
+	padding: 1% 2.5%;
+	justify-content: space-around;
+    align-items: center;
+	
+	max-width: 800px;
+	width:100%;
+	margin:-20px auto 0;
+	
+    box-shadow: inset 0px 0px 113.1px 60.9px rgba(13, 13, 13, 0.49);
+    filter: drop-shadow(0px 1px 6px rgba(7, 5, 1, 0.5));
+    
+    /* border stuff for bevels*/
+    border: 5px solid transparent;
+    border-image: linear-gradient(180deg, #1b6b86 0%, #2f4c52 100%);
+    border-image-slice: 1;
+    
+	background: url(../images/global_pattern.jpg);  
+    
+    cursor:help;
+}
+.icon_wrapper.noCursor {
+    cursor:unset;
+}
+.icon_wrapper::before {
+    content: '';
+    top: -9px;
+    left: -9px;
+    bottom: -9px;
+    right: -9px;
+    position: absolute;
+    z-index:-1;
+    border: 4px solid transparent;
+    border-image: linear-gradient(180deg, #c0e5e2 0%, #1c2a33 100%);
+    border-image-slice: 1;
+}
+.icon_wrapper::after {
+    content: '';
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    z-index:-1;
+    border: 4px solid transparent;
+    border-image: linear-gradient(180deg, #1c2a33 0%, #c0e5e2 100%);
+    border-image-slice: 1;
+}
+
+.icon_wrapper .icon {
+	position: relative;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.icon_wrapper .icon img {
+	max-width:100%;
+	height: auto;
+}
+.icon_wrapper .icon .found {
+    position:absolute;
+    opacity:0;
+}
+
+/* MAGNIFYING GLASS ----------------------------------------- */
+#magnifying_glass {
+	position: absolute;
+	/* 262x262 */
+	--full-width: 171;
+	--full-height: 171;
+	/* Set dimensions to glass size for maximum drag area */
+	--parent-width:165;
+	--parent-height:166;
+	width:calc(var(--parent-width) / var(--main-width) * 100%);
+	height:calc(var(--parent-height) / var(--main-height) * 100%);
+	/* Always start at 0 */
+	top:0;
+	left:0;
+	filter: drop-shadow(6px 11px 7px rgba(5, 5, 6, 0.25));
+	z-index: 1;
+    /* fix for ios */
+    pointer-events:auto;
+}
+#magnifying_glass .glass {
+	position: absolute;
+	top:0;
+	left:0;
+	width:calc(165 / var(--parent-width) * 100%);
+	height:calc(166 / var(--parent-height) * 100%);
+}
+#magnifying_glass .glass img {
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+#magnifying_glass .glass .background {
+	position: absolute;
+	top: 13%;
+	left: 13%;
+	width: 74%;
+	height: 75%;
+	background:rgba(0,0,0,.25);
+	border-radius: 50%;
+}
+#magnifying_glass .handle {
+	position: absolute;
+	bottom:calc( ( var(--parent-width) - var(--full-width) ) / var(--parent-width) * 100% );
+	right:calc( ( var(--parent-height) - var(--full-height) ) / var(--parent-height) * 100% );
+	width:calc(56 / var(--parent-width) * 100%);
+	height:calc(53 / var(--parent-height) * 100%);
+}
+/*#magnifying_glass .glass::after {
+	content:'';
+	position: absolute;
+	bottom:calc( ( var(--parent-width) - var(--full-width) ) / var(--parent-width) * 100% );
+	right:calc( ( var(--parent-height) - var(--full-height) ) / var(--parent-height) * 100% );
+	width:calc(83 / var(--parent-width) * 100%);
+	height:calc(83 / var(--parent-height) * 100%);
+	background: url(../images/magnifying_glass2.png) 50% 50% / cover no-repeat;
+}*/
+.overflow_hide {
+	position: absolute;
+	top:0;
+	left: 0;
+    width:100%;
+	height:100%;
+	overflow: hidden;
+}
+
+/* FIND ----------------------------------------- */
+.seek_scroll .find {
+	opacity:0;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	xtransition:.15s opacity;
+	z-index: 2;
+    pointer-events: none;
+}
+.seek_scroll .find_1 {
+	position: absolute;
+	top: 82.5%;
+    left: 56.1%;
+	width:calc(72 / var(--main-width) * 100%);
+	height:calc(91 / var(--main-height) * 100%);
+}
+.seek_scroll .find_2 {
+	position: absolute;
+	top: 51.8%;
+    left: 39.0%;
+	width:calc(83 / var(--main-width) * 100%);
+	height:calc(65 / var(--main-height) * 100%);
+}
+.seek_scroll .find_3 {
+	position: absolute;
+	top: 57.3%;
+    left: 13.9%;
+	width:calc(68 / var(--main-width) * 100%);
+	height:calc(68 / var(--main-height) * 100%);
+}
+.seek_scroll .find_4 {
+	position: absolute;
+	top: 77.2%;
+    left: 77.5%;
+	width:calc(68 / var(--main-width) * 100%);
+	height:calc(48 / var(--main-height) * 100%);
+}
+.seek_scroll .find_5 {
+	position: absolute;
+	top: 83.5%;
+    left: 13.3%;
+	width:calc(100 / var(--main-width) * 100%);
+	height:calc(40 / var(--main-height) * 100%);
+}
+.seek_scroll .find_6 {
+	position: absolute;
+	top: 35.5%;
+    left: 70.2%;
+	width:calc(54 / var(--main-width) * 100%);
+	height:calc(54 / var(--main-height) * 100%);
+}
+.seek_scroll .find_7 {
+	position: absolute;
+    top: 19.1%;
+    left: 53.6%;
+	width:calc(95 / var(--main-width) * 100%);
+	height:calc(71 / var(--main-height) * 100%);
+}
+.seek_scroll .find_8 {
+	position: absolute;
+	top: 57.3%;
+    left: 88.55%;
+	width:calc(98 / var(--main-width) * 100%);
+	height:calc(77 / var(--main-height) * 100%);
+}
+
+.seek_scroll .hover {
+	opacity:1;
+}
+.seek_scroll .disabled {
+}
+
+.find_cont img {
+	position: absolute;
+	top:0;
+	left: 0;
+	width:100%;
+	height: 100%;
+}
+
+/* INSTRUCTIONS STUFF ----------------------------------------- */
+.gray_cover_style {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.75);
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions_wrapper_outer {
+    width: min(600px, 90%);
+    text-align: center;
+    box-shadow: 0px 0px 25px 6px rgb(0 0 0 / 60%);
+}
+
+.instructions_wrapper_outer .instructions_wrapper_inner {
+    width: 100%;
+    background-color: #121f27;
+    position: relative;
+}
+
+.instructions_wrapper_outer .instructions_text {
+    margin: 0 auto;
+    padding: 3.125em 3.75em;
+}
+
+.instructions_wrapper_outer .instructions_close {
+    cursor: pointer;
+    position: relative;
+    height: 3.75em;
+	background-color: #27343c;
+    border-top: 8px solid #29feff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.instructions_X {
+	height: 2.8125em;
+    width: 2.8125em;
+    position: relative;
+}
+
+/* CONGRATULATIONS SCREEN ----------------------------------------- */
+#congrats_wrapper {
+    position:absolute;
+    height:99%;
+    top:-5px;
+    background:unset;
+    pointer-events:auto;
+}
+#congrats_wrapper .instructions_wrapper_outer {
+	width: min(860px, 90%);
+    box-shadow: unset;
+    height:98%;
+    
+    display: flex;
+    align-items: center;
+    
+    overflow:hidden;
+    scrollbar-color:#c0e5e2 #1c2a33;
+    scrollbar-width:thin;
+}
+#congrats_wrapper .instructions_wrapper_outer.allowScroll {
+    overflow:auto;
+}
+#congrats_wrapper .instructions_text {
+    padding:unset;
+}
+#congrats_wrapper .instructions_wrapper_inner {
+    background-color:unset;
+    
+    max-height:100%;
+    padding-inline:40px;
+    box-sizing:border-box;
+}
+#congrats_wrapper img {
+    max-width:100%;
+    height:auto;
+    margin:20px auto;
+}
+#congrats_wrapper h1 {
+    color:#fdc731;
+}
+#congrats_wrapper .quit_button {
+    background: rgba(0,0,0,.5);
+    padding: .5em 2em;
+    display: inline-block;
+    cursor: pointer;
+    border:4px solid #fdc731;
+    box-shadow: 0px 0px 25px 6px rgb(0 0 0 / 60%);
+    transition: all .5s ease-in-out;
+}
+
+#congrats_wrapper .quit_button p {
+    color: #FFF;
+    margin: 0;
+}
+
+/* quit button hover */
+@media (hover: hover) {
+    #quiz_box .startQuiz:hover p {
+        border-color:#fca73a;
+        color:#fca73a;
+        background:var(--brown);
+    }
+    #congrats_wrapper .quit_button:hover {
+        transform:scale(1.1);
+        background:#fdc731;
+    }
+}
+
+/* Keep these near the bottom to make sure your custom code doesn't accidentally overwrite these classes */
+.show_on_HD {display: block;}
+.show_on_MOB {display: none;}
+
+/* ----------------------------------
+            MEDIA QUERIES
+---------------------------------- */
+
+/* thinner than the wrapper */
+@media only screen and (max-width: 1450px) {
+    /* .wrapper {
+        width: 100%;
+        min-width: auto;
+        max-width: none;
+        box-sizing: outline-box;
+        padding: 0 2vw;
+	}*/
+}
+
+
+/* mobile */
+    
+@media only screen and (max-width: 1023px) and (orientation: landscape) {
+	
+	/*.wrapper {
+		--border-width:10;	
+	}*/
+	
+	.icon_wrapper {
+		grid-template-columns: repeat(8, 10vh);
+		gap: 2.5vh 2.5vh;
+		padding: 2.5vh;
+	}
+	
+}
+
+
+@media only screen and (max-width: 1023px) and (orientation: portrait) {
+
+    h1, h2, h3, h4, p, ul, li, span {
+        text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+	p, ul, li {line-height: 140%;}
+    .show_on_MOB {display: block;}
+    .show_on_HD {display: none;}
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    #main_wrapper {
+        background: url(../images/global_background_MOB.jpg) 50% 0% / cover no-repeat;
+    } 
+	
+	/*.wrapper {
+		--border-width:10;	
+	}*/
+    
+    #congrats_wrapper img {
+        max-width:75%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+	   
+	
+	.instructions_wrapper_inner {
+		max-height:85vh;
+		overflow-y:auto;
+	}
+	
+	.instructions_wrapper_outer .instructions_text {
+        padding: 2.5em;
+    }
+	#congrats_wrapper .instructions_text {
+		padding:0;
+	}
+	#congrats_wrapper .instructions_wrapper_inner {
+        /*border: 7px solid #fff;
+        border-image: url(../images/global_sequin_pattern.png) 7;
+        padding: 5% 3% 7%;*/
+    }
+    
+    #congrats_wrapper img {
+        max-width:60%;
+    }
+	
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+	
+	.icon_wrapper {
+		grid-template-columns: repeat(4, 12.5%);
+	}
+	
+}
