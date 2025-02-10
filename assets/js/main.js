@@ -64,7 +64,7 @@
 		// Parallax background.
 
 			// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-				if (browser.name == 'ie'
+				/*if (browser.name == 'ie'
 				||	browser.mobile)
 					settings.parallax = false;
 
@@ -91,7 +91,62 @@
 					$window.triggerHandler('scroll');
 				});
 
-			}
+			}*/
+    
+                var parallaxBg = gsap.timeline({scrollTrigger: {
+                    trigger: "#main",
+                    start: "top 5%",
+                    end: "bottom 95%", 
+                    scrub:2
+                }});
+                parallaxBg
+                .fromTo("#header", {backgroundPosition: "0% 50%"}, {backgroundPosition:"100% 50%", ease: "none"})
+    
+                if (browser.name == 'ie' ||	browser.mobile) {
+                    parallaxBg.disable;
+                }
+    
+                breakpoints.on('<=medium', function() {
+					parallaxBg.disable;
+				});
+    
+                breakpoints.on('>medium', function() {
+					parallaxBg.enable;
+				});
+    
+                var anim1 = gsap.timeline({scrollTrigger: {
+                    trigger: ".anim1",
+                    start: "top center"
+                }});
+                anim1
+                .from(".anim1 h2", {duration:.75, y:20, opacity:0})
+                .from(".anim1 p", {duration:.75, y:20, opacity:0}, "<+.25")
+    
+                var anim2 = gsap.timeline({scrollTrigger: {
+                    trigger: ".anim2",
+                    start: "top center"
+                }});
+                anim2
+                .from(".anim2 h3", {duration:.75, y:20, opacity:0})
+                .from(".anim2 li", {duration:.75, stagger:.25, y:20, opacity:0}, "<+.25")
+    
+                var anim3 = gsap.timeline({scrollTrigger: {
+                    trigger: "#two",
+                    start: "top center"
+                }});
+                anim3
+                .from("#two .row .work-item a", {duration:.75, stagger:.75, y:20, opacity:0})
+                .from("#two .row .work-item h3", {duration:.75, stagger:.75, y:20, opacity:0}, "<+.25")
+                .from("#two .row .work-item p", {duration:.75, stagger:.75, y:20, opacity:0}, "<+.25")
+    
+                var anim4 = gsap.timeline({scrollTrigger: {
+                    trigger: "#three",
+                    start: "bottom bottom"
+                }});
+                anim4
+                .from("#three .anim4 h2, #three .anim4 p", {duration:.75, y:20, stagger:.25, opacity:0})
+                .from("#three .row > .col-12-small", {duration:.75, y:20, stagger:.25, opacity:0})
+    
 
 	// Main Sections: Two.
 
@@ -119,6 +174,16 @@
                     location.href = "mailto:taylor@taylorhartwell.com?subject="+encodeURIComponent(formSubject)+"&body="+encodeURIComponent(formBody);
                     return false;
                 });
+                
+                //waypoints();
+                
+                ScrollTrigger.refresh();
+                
+                setTimeout(function() {
+                    stArray.forEach(function(ST) {
+                        ST.enable()
+                    });
+                }, 500);
 
 			});
 
