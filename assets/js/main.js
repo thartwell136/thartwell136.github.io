@@ -113,39 +113,98 @@
                 breakpoints.on('>medium', function() {
 					parallaxBg.enable;
 				});
+                
+                //Left side text
+                var split = new SplitText("#header .inner h1", {type: "chars"});    
+                var headerAnim = gsap.timeline({scrollTrigger: {
+                    trigger: "#header",
+                    start: "top center"
+                }});
+                headerAnim
+                .from("#header .image", {duration:1.25, y:20, rotationY:-360, opacity:0, ease:"back.out(2)"})
+                .from(split.chars, {
+                  duration: 1,
+                  opacity: 0,
+                  scale: 0,
+                  y: 80,
+                  rotationX: 180,
+                  transformOrigin: "0% 50% -50",
+                  ease: "back",
+                  stagger: 0.01,
+                  onComplete:function() {
+                      logoRepeat.restart();
+                  }
+                }, "<+.5")
+    
+                var logoRepeat = gsap.timeline({repeat:-1, repeatDelay:10, paused:true});
+                    logoRepeat
+                    .to("#header .image", {duration:.75, y:20, rotationY:-60, ease:"back.inOut(.75)"})
+                    .to("#header .image", {duration:1.25, y:-40, rotationY:360, ease:"back.inOut(1.25)"}, ">-=.25")
+                    .to("#header .image", {duration:1.25, y:0, rotationY:0, ease:"back.inOut(1.25)"}, ">-=.25")
     
                 var anim1 = gsap.timeline({scrollTrigger: {
                     trigger: ".anim1",
                     start: "top center"
                 }});
                 anim1
-                .from(".anim1 h2", {duration:.75, y:20, opacity:0})
-                .from(".anim1 p", {duration:.75, y:20, opacity:0}, "<+.25")
+                .from(".anim1 h2", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
+                .from(".anim1 p", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"}, "<+.25")
     
                 var anim2 = gsap.timeline({scrollTrigger: {
                     trigger: ".anim2",
                     start: "top center"
                 }});
                 anim2
-                .from(".anim2 h3", {duration:.75, y:20, opacity:0})
-                .from(".anim2 li", {duration:.75, stagger:.25, y:20, opacity:0}, "<+.25")
-    
-                var anim3 = gsap.timeline({scrollTrigger: {
-                    trigger: "#two",
-                    start: "top center"
-                }});
-                anim3
-                .from("#two .row .work-item a", {duration:.75, stagger:.75, y:20, opacity:0})
-                .from("#two .row .work-item h3", {duration:.75, stagger:.75, y:20, opacity:0}, "<+.25")
-                .from("#two .row .work-item p", {duration:.75, stagger:.75, y:20, opacity:0}, "<+.25")
+                .from(".anim2 h3", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
+                .from(".anim2 li", {duration:1, stagger:.15, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
+                  
+                let workItems = gsap.utils.toArray("#two .work-item");
+                let workItemsTl = [];
+                //Create initial state / tl for work items
+                workItems.forEach((item,i) => {
+                    var image = $(item).find('a')[0];
+                    var topText = $(item).find('h3')[0];
+                    var bottomText = $(item).find('p')[0];
+                    var timelineId = "timeline_" + i;
+
+                    var tl = gsap.timeline({id:timelineId, paused:true});
+                        tl
+                        .set(image, {transformPerspective:800})
+                        .from(image, {duration:1.25, rotationX:-360, scale:0, opacity:0, ease:"back.out(1.5)"})
+                        .from(topText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
+                        .from(bottomText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
+                    
+                    workItemsTl.push(tl);
+                });
+                //Create ScrollTrigger for work items
+                ScrollTrigger.batch(workItems, {
+                    start:"top center",
+                    onEnter: batch => {
+                        batch.forEach((item,i) => {                            
+                            var delay = i * .5;
+                            var index = workItems.indexOf(item);
+                            var timelineId = "timeline_" + index;
+                            var tl = gsap.getById(timelineId);
+                            //necessary because technically timeline has already started
+                            tl.delay(delay).restart(true);
+                        });
+                    }
+                });
     
                 var anim4 = gsap.timeline({scrollTrigger: {
                     trigger: "#three",
                     start: "bottom bottom"
                 }});
                 anim4
-                .from("#three .anim4 h2, #three .anim4 p", {duration:.75, y:20, stagger:.25, opacity:0})
-                .from("#three .row > .col-12-small", {duration:.75, y:20, stagger:.25, opacity:0})
+                .from("#three .anim4 h2, #three .anim4 p", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"})
+                .from("#three .row > .col-12-small", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.75")
+    
+    
+                //Get all scrolltriggers and disable them so they don't launch immediately
+                var stArray = ScrollTrigger.getAll()
+                stArray.forEach(function(ST) {
+                  ST.disable()
+                });
     
 
 	// Main Sections: Two.
@@ -177,13 +236,13 @@
                 
                 //waypoints();
                 
+                //Get all scrolltriggers and enable them after 500ms so they don't launch immediately
                 ScrollTrigger.refresh();
-                
                 setTimeout(function() {
                     stArray.forEach(function(ST) {
                         ST.enable()
                     });
-                }, 500);
+                }, 250);
 
 			});
 
