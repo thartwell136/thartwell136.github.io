@@ -2854,7 +2854,7 @@ input, select, textarea {
 			opacity: 1;
 			position: absolute;
 			top: 0;
-			width: 75px;
+			width: 40px;
             z-index:1;
             display:flex;
             justify-content:center;
@@ -2889,7 +2889,7 @@ input, select, textarea {
 			}
 
 		.poptrox-popup .nav-next {
-			right: -75px;
+			right: -40px;
 		}
 
 			.poptrox-popup .nav-next:before {
@@ -2898,7 +2898,7 @@ input, select, textarea {
 			}
 
 		.poptrox-popup .nav-previous {
-			left: -75px;
+			left: -40px;
 		}
 
 			.poptrox-popup .nav-previous:before {
@@ -2914,14 +2914,14 @@ input, select, textarea {
 			transition: opacity 0.2s ease-in-out;
 			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 			color: #fff;
-			height: 4em;
+			height: 34px;
 			line-height: 4em;
 			opacity: 1;
 			position: absolute;
-			right: -4em;
+			right: -34px;
 			text-align: center;
-			top: -2em;
-			width: 4em;
+			top: -34px;
+			width: 34px;
 			z-index: 2;
 		}
 
@@ -2974,6 +2974,35 @@ input, select, textarea {
 			.poptrox-popup:hover .closer:hover {
 				opacity: 1.0;
 			}
+
+
+        @media screen and (max-width: 480px) {
+            
+            .poptrox-popup .nav-next,
+            .poptrox-popup .nav-previous {
+                width:25px;
+            }
+            .poptrox-popup .nav-next:before,
+			.poptrox-popup .nav-previous:before {
+				font-size: 1.75em;
+			}
+            .poptrox-popup .nav-next {
+                right: -25px;
+            }
+            .poptrox-popup .nav-previous {
+                left: -25px;
+            }
+            
+            .poptrox-popup .closer {
+                width:20px;
+                height:20px;
+                top:-20px;
+                right: -20px;
+            }
+            .poptrox-popup .closer:before {
+                font-size: .65em;    
+            }
+        }
 
 /* Touch */
 

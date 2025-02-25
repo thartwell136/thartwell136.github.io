@@ -223,7 +223,7 @@
 					usePopupDefaultStyling: false,
 					usePopupEasyClose: false,
 					usePopupNav: true,
-					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+					windowMargin: (breakpoints.active('<=xsmall') ? 25 : 40)
 				});
                 
                 const form = document.getElementsByTagName("form")[0];
