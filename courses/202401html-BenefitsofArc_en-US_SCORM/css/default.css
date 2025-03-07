@@ -1,0 +1,472 @@
+@charset "utf-8";
+
+* {margin:0px; padding: 0px;}
+
+body {
+    background: #373737 url(../globalFiles/images/crosshatch_6.0.png);
+    overflow: hidden;
+    font-size: 16px;
+}
+
+#main_wrapper {
+    position: fixed;
+    width: 1920px;
+    height: 1080px;
+    background: #1f1f1f;
+    -webkit-box-shadow: 0px 0px 11px 3px rgba(0,0,0,.45);
+    -moz-box-shadow: 0px 0px 11px 3px rgba(0,0,0,.45);
+    box-shadow: 0px 0px 11px 3px rgba(0,0,0,.45);
+    overflow: hidden;
+}
+
+.scene {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    top:0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+
+/* PRELOADER --------------------------------------------------------------------------- */
+#preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#preloader_wrapper {
+    width: 85%;
+    max-width: 550px;
+    text-align: center;
+}
+
+#loading_bar_full_wrapper {
+    margin: 0 auto;
+    opacity: 0;
+}
+#loading_bar_full_bar {
+    height: 2px;
+    background: #357FB7;
+    width: 100%;
+}
+#loading_bar_full_inner {
+    width: 0px;
+    height: 8px;
+    background: #00ACEE;
+	position: relative;
+    top: -3px;
+    margin: 0 auto;
+}
+
+#loading_bar_full-progress {
+    text-align:center;
+    margin-top: 30px;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+
+@media only screen and (min-width: 1921px) {
+
+	#loading_bar_full-progress.p20 {font-size:1.7em;}
+	
+}
+    
+
+/* NAV ARROWS --------------------------------------------------------------------------- */
+
+.nav_arrow_style {
+    z-index: 70;
+    opacity:1;
+    width: 2.8125em;
+    height: 3.6875em;
+    position:absolute;
+    bottom: 1.25em;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.nav_arrow_inner_style {
+    cursor: pointer;
+    opacity:1;
+    width: 2.8125em;
+    height: 3.6875em;
+    position:absolute;
+    bottom: 0;    
+    border: solid 0.125em #ffffff;
+    background-color: #000000;
+    box-sizing: border-box;
+    transition: 0.15s background;
+}
+
+#next_arrow {    
+    right: 2.1875em;
+}
+
+#back_arrow {
+    left: 2.1875em;
+}
+
+#next_arrow div {
+    right: 0;
+}
+
+#back_arrow div {
+    left: 0;
+}
+
+.nav_arrow_style svg {
+    position: absolute;
+    top: 0.56em;
+    left: 0.75em;
+    width: 1em;
+    height: 2.4em;
+    transition: 0.185s all ease-out;
+}
+
+
+/* Hover state gets 'stuck' on touch so only enable it for devices with hover capability */
+@media (hover: hover) {
+	.nav_arrow_inner_style:not(.unclickable):hover {
+		background-color: #474747;
+	}    
+    #back_arrow:not(.unclickable) .nav_arrow_inner_style:hover svg {
+        transform: translateX(-3px);
+    }
+    #next_arrow:not(.unclickable) .nav_arrow_inner_style:hover svg {
+        transform: translateX(3px);
+    }    
+}
+
+
+.nav_arrow_style.unclickable .nav_arrow_inner_style {
+    cursor: no-drop !important;
+}
+
+.nav_arrow_style.unclickable .nav_arrow_inner_style {
+    border-color: #444444;
+    background: #1e1e1e;
+}
+
+.nav_arrow_style.unclickable polyline {
+    stroke: #777777;
+}
+
+
+@media only screen and (max-width: 1024px) {
+        
+    .nav_arrow_style {
+        width: 6.5em;
+        height: 10em;
+        bottom: calc(50% - 5em);
+    }
+    
+    .nav_arrow_inner_style {
+        bottom: 3em;
+    }
+    
+    #back_arrow {
+        left: 0;
+    }
+    #next_arrow {
+        right: 0;
+    }
+     #back_arrow .nav_arrow_inner_style {
+        left: 2.1875em;
+    }
+    #next_arrow .nav_arrow_inner_style {
+        right: 2.1875em;
+    }   
+    
+    
+}
+
+
+
+/* Nav Menu --------------------------------------------------------------------------- */
+
+#nav_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 80;
+}
+
+#nav_click_close {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+
+#nav_icon_wrapper {
+    width: 2.8125em;
+    height: 2.8125em;
+    position: absolute;
+    top: 2.1875em;
+    left: 2.1875em;
+    z-index: 1;
+}
+
+#nav_icon_wrapper_inner {
+    cursor: pointer;
+    width: 2.8125em;
+    height: 2.8125em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 0.125em #ffffff;
+    background-color: #000000;
+    box-sizing: border-box;
+    transition: 0.15s background;
+}
+
+@media (hover: hover) {
+	#nav_icon_wrapper_inner:hover {
+		background-color: #474747;
+	}
+}
+
+
+@media only screen and (max-width: 1024px) {
+    #nav_icon_wrapper {
+        width: 5.75em;
+        height: 5.75em;
+        top: 0;
+        left: 0;
+    }
+    
+    #nav_icon_wrapper_inner {
+        top: 2.1875em;
+        left: 2.1875em;        
+    }
+    
+    
+}
+
+
+#nav_icon_wrapper svg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#nav_container {
+    display: flex;
+    width: 17.5em;
+    height: 1080px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+}
+#nav_content {
+    width: 17.125em;
+    padding: 8.25em 2.1875em 2.1875em 2.1875em;
+    box-sizing: border-box;
+}
+#nav_content p {
+    color: #ffffff;
+    padding: 1.125em 0;
+}
+.nav_item {
+    width: 100%;
+    transition: transform 0.35s;
+    cursor: pointer;
+    xwill-change: transform;
+}
+.nav_item:not(.youMayNotPass):hover {
+    transform: translate3d(10px, 0px, 10px);
+}
+.nav_underline {
+    width: 25%;
+    height: 0.125em;
+    background-color: #72797f;
+}
+.active_nav_item .nav_underline {background-color: #0071c5;}
+
+
+/* Course progress tracker --------------------------- */
+#nav_tracker {
+    width: 0.375em;
+    background-color: #fff;    
+    border-right-width: 0.0625em;
+    border-right-style: solid;
+    border-right-color: #999;    
+    position: relative;
+}
+#nav_tracker_inner {
+    width: 100%;
+    height: 0;
+    background-color: #999;
+}
+
+
+/* Color schemes ------------ */
+.dark_tracker #nav_tracker {
+    background-color: #333;
+    border-right-color: #333;   
+}
+.dark_tracker #nav_tracker_inner {background-color: #999;}
+
+.color_tracker #nav_tracker {
+    background-color: #fff;
+    border-right-color: #0071c5; 
+}
+.color_tracker #nav_tracker_inner {background-color: #0071c5;}
+
+.youMayNotPass {cursor: no-drop !important; }
+.youMayNotPass p {opacity: .5;}
+
+
+
+
+/*INSTRUCTIONS STUFF --------------------------------------------------------------------------- */
+.gray_cover_style {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.75);
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions_wrapper_outer {
+    width: 37.5em;
+    text-align: center;
+}
+
+.instructions_wrapper_outer .instructions_wrapper_inner {
+    width: inherit;
+    background-color: #10538b;
+    position: relative;
+}
+
+.instructions_wrapper_outer .instructions_text {
+    margin: 0 auto;
+    padding: 70px 50px;
+}
+
+.instructions_wrapper_outer .instructions_close {
+    cursor: pointer;
+    position: relative;
+    height: 3.75em;
+	background-color: #000000;
+	border-top: solid 0.1875em #0071c5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.instructions_X {
+	height: 2.8125em;
+    width: 2.8125em;
+    position: relative;
+}
+
+
+/* TITLE SCREEN --------------------------------------------------------------------------- */
+#scene_legal {
+    z-index: 90;
+	overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at 50% 43%, rgb(23,98,157)20%, rgb(8,54,103)60%, rgb(2,18,53) 90%);
+}
+
+#scene_legal_inner {
+	width: 1366px; 
+}
+
+#legal_wrapper_full {
+    width: 100%;
+    min-height: 350px;
+	max-height: 830px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #4e799f;
+}
+
+#legal_wrapper_full_inner {
+	padding: 1em 1.5em;
+}
+
+#legal_wrapper_full_inner p {
+    color: #ccc;
+	font-size: 0.9375em;
+	margin: 8px 0;
+}
+
+#legal_wrapper_full_inner li {
+    color:#ccc;
+    font-weight: normal;
+	font-size: 0.9375em;	
+    margin: 8px 0;
+}
+
+#legal_wrapper_full_inner ul {
+    margin-left: 4px;
+    padding-left: 15px;
+}
+
+
+/* Custom Scrollbar Styling - Dennis 10/29/18 */
+/* Firefox, IE & Edge will still use default browser scrollbar styling */
+#legal_wrapper_full::-webkit-scrollbar {
+    width: 8px;
+}
+#legal_wrapper_full::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+#legal_wrapper_full::-webkit-scrollbar-thumb:hover { 
+    background: #fff; 
+}
+#legal_wrapper_full::-webkit-scrollbar-track {
+	background-color: #4e799f;
+}
+
+#legal_close_wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#legal_close {
+    cursor: pointer;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    display: inline-block;
+    border: solid 0.125em #ffffff;
+    background-color: #000000;
+    transition: 0.15s background;
+}
+
+#legal_close svg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (hover: hover) {
+    #legal_close:hover {
+        background-color: #474747;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #scene_legal_inner {
+        width: 1500px;
+    }
+
+}

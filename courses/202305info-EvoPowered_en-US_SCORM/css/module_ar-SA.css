@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1, h2, h3, h4, p, ul, ol, td, #quiz-body {direction: rtl;}
+
+h1, h2, h3, h4 {
+    line-height: 120%;
+}
+
+li {
+    margin-left: 0px;
+    margin-right: 19px;
+	line-height: 130%;
+}
+
+ul li {
+    text-indent: -1em;
+    list-style-type: none !important; 
+}
+
+ul li:before {
+    content: "•";
+    padding-left: 15px;
+}
+
+#legal_wrapper_full ul {
+    margin-right: 4px;
+    padding-right: 15px;
+}
+
+.chart {
+    direction: rtl;
+}

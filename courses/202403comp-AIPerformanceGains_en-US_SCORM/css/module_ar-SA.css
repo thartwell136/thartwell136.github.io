@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1, h2, h3, h4, p, ul, td, #quiz-body, .slider .slide, .section.two_col .text > .inner, #spoke_3_2 .column_cont {direction: rtl;}
+
+h1 {line-height: 130%;}
+h2, h3, h4 {line-height: 120%;}
+
+ul#nav_menu {direction: ltr;}
+#nav_menu li {text-align:right;}
+
+li {
+    margin-left: 0px;
+    margin-right: 19px;
+    line-height: 130%;
+}
+
+ul:not(#nav_menu) li {
+    text-indent: -1em;
+    list-style-type: none !important;
+}
+
+ul:not(#nav_menu) li:before {
+    content: "•";
+    padding-left: 15px;
+}
+
+#legal_wrapper_full ul {
+    margin-right: 4px;
+    padding-right: 15px;
+}
+
+.chart {
+    direction: rtl;
+}
+
+.slider .addIO b {margin-bottom: 0;}

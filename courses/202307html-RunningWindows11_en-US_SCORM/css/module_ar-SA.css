@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+.scene p, .scene li {line-height: 140%;}
+
+p, ul, ol, td, #quiz-body, .textBoxStyle > .inner, #textbox_1_0_3, #textbox_1_1_0, #textbox_1_1_7 {direction: rtl;}
+
+#nav_content {direction: rtl;}
+#nav_content p {line-height: 140%;}
+.nav_item:not(.youMayNotPass):hover {transform: translate3d(-10px, 0px, 10px);}
+
+#main_wrapper ul {
+	margin-left: 0px;
+	padding-left: 0px;
+	margin-right: 35px;
+	padding-right: 15px;
+}
+
+ul {
+    margin-left: 0px;
+	margin-right: 15px;
+}
+
+ul li {
+    margin-left: 0px;
+    margin-right: 25px;
+}
+
+/* Use scene class to make sure these don't target the li's in the nav menu. */
+.scene ul li, .scene ol li {line-height: 130%;}
+
+.scene ul li {
+    text-indent: -1em;
+    list-style-type: none !important; 
+}
+
+.scene ul li:before {
+    content: "•";
+    padding-left: 15px;
+}
+
+#scene_legal .legal_wrapper_inner {
+    text-align: right;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    
+}

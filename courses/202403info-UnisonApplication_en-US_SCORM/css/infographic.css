@@ -1,0 +1,561 @@
+/* ----------------------------------
+        INFOGRAPHIC STYLES
+---------------------------------- */
+
+:root {
+    --sample: #fff;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: #373737 url(../../globalFiles/images/crosshatch_6.0.png);
+    overflow-x: hidden;
+    font-size: 16px;
+    color: #14347c;
+}
+
+#main_wrapper {
+    width:100%;
+    height:auto;
+    background:#111111;
+    margin: 0 auto;
+}
+
+
+.wrapper {
+    width: min(1200px, 100% - 4vw);
+    margin-inline: auto;
+    position: relative;
+}
+
+/* Font Styles ------------------------- */
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 150%;
+    font-size: 1em;
+    color: #14347c;
+}
+
+ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 150%;
+}
+
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 150%;
+    font-size: 1em;
+    margin-left: 19px;
+}
+
+h1 {
+    font-size: 2.3em;
+    font-weight: normal;
+	margin-top: 1em;
+    line-height: 130%;
+}
+
+h2 {
+
+    font-size: 2em;
+    font-weight: normal;
+	margin-top: 1em;
+    line-height: 130%;
+}
+
+h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 130%;
+}
+
+h4 {
+    font-size: 1.25em;
+    font-weight: normal;
+    margin-top: 20px;
+    line-height: 130%;
+}
+
+.legal p {
+    font-size:.625em;
+    margin: 1em 0;
+    color:#111111;
+}
+
+.white { color:#fff; }
+.black { color:#000000; }
+.blue { color:#0071c5; }
+.lt_blue { color:#00adef; }
+.lt_blue2 { color:#69d6ff; }
+.dk_blue { color:#003b70; }
+.gray { color:#555555; }
+.dk_gray { color:#333333; }
+.yellow { color:#feda00; }
+.green { color:#74a72d; }
+.orange { color:#ffa300;  }
+.dk_orange { color:#fb4b02; }
+.purple { color: #180153; }
+
+.nomargin { margin: 0 !important; }
+.notopmargin, .nomargintop {margin-top: 0 !important;}
+.nobottommargin, .nomarginbottom {margin-bottom: 0 !important;}
+
+
+/* Misc Default Styles ------------------------- */
+
+.left {text-align: left;}
+.center {text-align: center;}
+.right {text-align: right;}
+
+.section {
+    position: relative;
+}
+
+/* Wrap all tables in a div with this class so they display correctly on mobile */
+.chart {overflow-x: auto;}
+
+
+/* ----------------------------------
+            CUSTOM CODE
+---------------------------------- */
+
+:root {
+	--padding-block:3.75em;
+    --padding-1-5:1.5em;
+    --padding-2:2em;
+    --padding-2-5:2.5em;
+    --padding-3:3em;
+    --padding-4:4em;
+    --padding-4-5:4.5em;
+    --padding-5:5em; 
+    --padding-6:6em; 
+    --padding-6-5:6.5em;
+    --padding-7:7em;
+    --padding-8:8em;
+    
+    --base-font-size:16;
+}
+
+h1, h2, h3, h4, p, li {
+    --max-font-size:16;
+    --min-font-size:16;
+    --max-screen-width:1400;
+    --min-screen-width:450;
+    
+    --font-size-calc:calc( (var(--min-font-size) * 1px) + (var(--max-font-size) - var(--min-font-size)) * ((100vw - (var(--min-screen-width) * 1px)) / (var(--max-screen-width) - var(--min-screen-width))));
+    --clamp-max: calc( (var(--max-font-size) / var(--base-font-size)) * 1em);
+    --clamp-min: calc( (var(--min-font-size) / var(--base-font-size)) * 1em);
+}
+
+h1 {
+   --max-font-size:54;
+   --min-font-size:36;
+   font-size:clamp(var(--clamp-min), var(--font-size-calc), var(--clamp-max));
+}
+h3 {
+   --max-font-size:30;
+   --min-font-size:20;
+   font-size:clamp(var(--clamp-min), var(--font-size-calc), var(--clamp-max));
+}
+p, li {
+   --max-font-size:20;
+   --min-font-size:16;
+   font-size:clamp(var(--clamp-min), var(--font-size-calc), var(--clamp-max));
+}
+
+.vc {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.full_img {
+    display:block;
+    max-width:100%;
+    height:auto;
+    margin:0 auto;
+}
+
+.full_width_img {
+    width: 100%;
+    height: auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.medium_width {
+	width:100%;
+	max-width: 1000px;
+	min-width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.small_width {
+	width:100%;
+	max-width:800px;
+	min-width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main_wrapper {
+    xbackground:#003575;
+}
+
+.white_bg {
+    background:#FFF;
+}
+
+/* Box 1 */
+#box_1 {
+    position:relative;
+    aspect-ratio: calc(1920 / 1200);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:1;
+}
+#box_1 .wrapper {
+    padding-block:var(--padding-block);
+    box-sizing:border-box;
+}
+#box_1 .bg {
+    display:block;
+    position:absolute;
+    top:0;
+    left:-2%;
+    width:104%;
+    height:auto;
+}
+
+/* Box 2 */
+#box_2 {
+    position:relative;
+    margin-top:-12vw;
+    padding-bottom:var(--padding-2);
+}
+#box_2 .wrapper {
+    z-index:1;
+}
+
+/* Box 3 */
+#box_3 {
+    z-index:1;
+    background:linear-gradient( 180deg, #e4e6fa, #dfe3f8);
+}
+.cloud {
+    display:block;
+    position:relative;
+    width:104%;
+    height:auto;
+    margin:0 -2%;
+}
+#box_3 .wrapper {
+    margin-top:-12vw;
+}
+#box_3 .top_text {
+    margin:1em auto 0;
+    text-align:center;
+}
+#box_3 .flex {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+#box_3 .flex .half {
+    flex-basis:48%;
+}
+
+.disclaimer {
+   --max-font-size:16;
+   --min-font-size:12;
+    font-style:italic;
+}
+
+/* Box_4 */
+#box_4 {
+    position:relative;
+    margin-top:-12vw;
+    padding-bottom:var(--padding-2);
+}
+#box_4 .wrapper {
+    z-index:1;
+}
+#box_4 .balloon {
+    margin-bottom:1em;
+}
+
+/* Click Section */
+#box_4 .button_cont {
+    position:relative;
+    margin:var(--padding-2) 0;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:3%;
+}
+#box_4 .button {
+    position:relative;
+    cursor:pointer;
+    flex-basis:30%;
+    max-width:359px;
+}
+#box_4 .button img {
+    width:100%;
+    height:auto;
+}
+#box_4 .button .inner {
+    transition:all .5s ease-in-out;
+}
+#box_4 .button.highlight .inner {
+    transform:scale(1.1);
+}
+#box_4 .button.clicked {
+    filter:grayscale(1);
+}
+#box_4 .button_cont.noClick {
+    pointer-events:none;
+}
+
+@media (hover: hover) {
+    #box_4 .button:hover .inner {
+        transform:scale(1.1);
+    }
+}
+
+#box_4 .text_cont {
+    position:relative;
+    height:100%;
+    display:flex;
+    align-items:center;
+}
+#box_4 .popup_text {
+    position:absolute;
+    width:100%;
+    padding-block:var(--padding-2);
+    text-align:center;
+    box-sizing:border-box;
+}
+#box_4 #popup_text_2 {
+    position:relative;
+}
+
+#box_4 .button_cont .click_hand {
+    position: absolute;
+	width:50%;
+    top: 80%;
+    left: 35%;
+	pointer-events: none;
+}
+
+/* Box 5 */
+#box_5 {
+    z-index:1;
+    background:linear-gradient( 180deg, #d1dcf2, #c0d2ec);
+}
+#box_5 .wrapper {
+    margin-top:-12vw;
+    width: min(1420px, 100% - 4vw);
+    margin-bottom:-4vw;
+}
+#box_5 .top_text {
+    width: min(1200px, 100%);
+    margin:1em auto 0;
+    text-align:center;
+}
+#box_5 .laptop {
+    margin:0 auto;
+}
+#box_5 .cloud_bottom {
+    position:relative;
+    --parent-width:1920;
+    aspect-ratio:calc( var(--parent-width) / 296);
+}
+#box_5 .cloud_bottom .cloud {
+    position:absolute;
+    width:104%;
+    height:auto;
+}
+#box_5 .cloud_bottom .sparkle {
+    position:absolute;
+    top:16%;
+    left:39%;
+    width: calc( 390 / var(--parent-width) * 100% );
+}
+
+/* Box 6 */
+#box_6 {
+    position:relative;
+    margin-top:-10vw;
+    padding-bottom:var(--padding-2)
+}
+#box_6 .wrapper {
+    z-index:1;
+}
+
+/* Quiz section ---------- */
+/* Quiz section ---------- */
+#quiz_box {
+    margin-inline:auto;
+    padding-top: var(--padding-1-5);
+	text-align: center;
+}
+
+#quiz_box .startQuiz {
+    display: inline-block;
+    transition:transform .5s ease-in-out;
+}
+
+#quiz_box .startQuiz p {
+    font-size: 1.5em;
+	line-height: 1.6em;
+	font-weight: bold;
+	color: #FFF;
+	padding: 0.5em 1.25em;
+	margin: 0 auto;
+	background-color: #404fe0;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#quiz_box.locked {
+    filter: saturate(0%);
+    pointer-events: none;
+}
+
+#quiz_locked_message {
+    visibility: hidden;
+}
+#quiz_box.locked #quiz_locked_message {
+    visibility: visible;
+}
+
+@keyframes rotationanimation {
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@media (hover: hover) {
+    .startQuiz:hover {
+       transform: scale(1.1);
+    }
+}
+
+#box_legal {
+    border-top:none;
+    background:linear-gradient( 180deg, #b5cce7, #aec8e4);
+}
+#legal_wrapper_full {
+    padding-top:0;
+}
+#legal_wrapper_full p, #legal_wrapper_full li {
+    color:#14347c;
+}
+
+/*#quiz_box p:hover {background-color: #659E44;}
+#quiz_box p:active {background-color: #89D359;}*/
+
+
+
+/* Keep these near the bottom to make sure your custom code doesn't accidentally overwrite these classes */
+.show_on_HD {display: block;}
+.show_on_MOB {display: none;}
+
+/* ----------------------------------
+            MEDIA QUERIES
+---------------------------------- */
+
+
+/* mobile */
+@media only screen and (max-width: 1024px) {
+	p, ul, li {line-height: 140%;}
+    .show_on_MOB {display: block;}
+    .show_on_HD {display: none;}
+
+    #legal_wrapper_full {
+        padding-block: 2vw;
+    }
+    
+    :root {
+        --padding-block:2em;
+        --padding-1-5:1em;
+        --padding-2:1em;
+        --padding-2-5:1.5em;
+        --padding-3:1.5em;
+        --padding-4:2em;
+        --padding-4-5:2em;
+        --padding-5:2em; 
+        --padding-6:3em; 
+        --padding-6-5:3em; 
+        --padding-7:3em;
+        --padding-8:3.5em;
+    }
+    
+    #box_2 .badge, #box_6 .badge {
+        --full-width:367;
+        max-width:calc( var(--full-width) * .8px );
+    }
+    
+    #box_3 .flex .left_half {
+        flex-basis:38%;
+    }
+    #box_3 .flex .right_half {
+        flex-basis:58%;
+    }
+    
+    #box_legal .wrapper {
+        padding-top:1em;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    
+    #box_3 .flex {
+        flex-wrap:wrap;
+    }
+    #box_3 .flex .half {
+        flex-basis:100%;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+
+    :root {
+        --padding-block:1em;
+        --padding-1-5:1em;
+        --padding-2:1em;
+        --padding-2-5:1em;
+        --padding-3:1em;
+        --padding-4:1em;
+        --padding-4-5:1em;
+        --padding-5:1.5em; 
+        --padding-6:1.5em; 
+        --padding-6-5:1.5em; 
+        --padding-7:1.5em;
+        --padding-8:2em;
+    }  
+    
+    #box_1 .full_img {
+        padding-top:50px;
+    }
+    
+    #box_4 .button_cont {
+        margin-bottom:0;
+    }
+    
+}
+
+

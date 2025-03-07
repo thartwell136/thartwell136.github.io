@@ -115,7 +115,7 @@
 				});
                 
                 //Left side text
-                var split = new SplitText("#header .inner h1", {type: "chars"});    
+                var split = new SplitText("#header .inner h1", {type: "words, chars"});    
                 var headerAnim = gsap.timeline({scrollTrigger: {
                     trigger: "#header",
                     start: "top center"
@@ -142,30 +142,131 @@
                     .to("#header .image", {duration:1.25, y:-40, rotationY:360, ease:"back.inOut(1.25)"}, ">-=.25")
                     .to("#header .image", {duration:1.25, y:0, rotationY:0, ease:"back.inOut(1.25)"}, ">-=.25")
     
-                var anim1 = gsap.timeline({scrollTrigger: {
-                    trigger: ".anim1",
+                var anim1_1 = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .anim1",
                     start: "top center"
                 }});
-                anim1
-                .from(".anim1 h2", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
-                .from(".anim1 p", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"}, "<+.25")
+                anim1_1
+                .from("#one .anim1 h2", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
+                .from("#one .anim1 p", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"}, "<+.25")
     
-                var anim2 = gsap.timeline({scrollTrigger: {
-                    trigger: ".anim2",
+                var anim1_2 = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .anim2",
                     start: "top center"
                 }});
-                anim2
-                .from(".anim2 h3", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
-                .from(".anim2 li", {duration:1, stagger:.15, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
-                  
-                let workItems = gsap.utils.toArray("#two .work-item");
-                let workItemsTl = [];
+                anim1_2
+                .from("#one .anim2 h3", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
+                .from("#one .anim2 li", {duration:1, stagger:.15, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
+    
+                var anim1_3 = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .anim3",
+                    start: "top center"
+                }});
+                anim1_3
+                .from("#one .anim3 h3", {duration:1.25, x:-40, opacity:0, ease:"back.out(2)"})
+    
+                var anim1_4 = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .anim4",
+                    start: "top center"
+                }});
+                anim1_4
+                .from("#one .anim4 h3", {duration:1.25, x:-40, opacity:0, ease:"back.out(2)"})
+    
+                let experienceLocation = gsap.utils.toArray("#experience_list .workplace");
+                let experienceLocationTl = [];
                 //Create initial state / tl for work items
-                workItems.forEach((item,i) => {
+                experienceLocation.forEach((item,i) => {
+                    var text = $(item).find('p');
+                    var timelineId = "experienceTL_1_" + i;
+
+                    var tl = gsap.timeline({id:timelineId, paused:true});
+                        tl
+                        .from(text, {duration:1, stagger:.25, x:-40, opacity:0, ease:"back.out(1.5)"})
+
+                    experienceLocationTl.push(tl);
+                });
+                //Create ScrollTrigger for experience items
+                let experienceLocationST = ScrollTrigger.batch(experienceLocation, {
+                    start:"top center",
+                    once:true,
+                    onEnter: batch => {
+                        batch.forEach((item,i) => { 
+                            var delay = i * .5;
+                            var index = experienceLocation.indexOf(item);
+                            var timelineId = "experienceTL_1_" + index;
+                            var tl = gsap.getById(timelineId);
+                            //necessary because technically timeline has already started
+                            tl.delay(delay).restart(true);
+                        })
+                    }
+                });
+
+                let experienceList = gsap.utils.toArray("#experience_list .workplace li");
+                let experienceListTl = [];
+                //Create initial state / tl for work items
+                experienceList.forEach((item,i) => {
+                    var text = $(item);
+                    var timelineId = "experienceTL_2_" + i;
+
+                    var tl = gsap.timeline({id:timelineId, paused:true});
+                        tl
+                        .from(text, {duration:1, x:40, opacity:0, ease:"back.out(1.5)"})
+
+                    experienceListTl.push(tl);
+                });
+                //Create ScrollTrigger for experience items
+                let experienceListST = ScrollTrigger.batch(experienceList, {
+                    start:"top center",
+                    once:true,
+                    onEnter: batch => {
+                        batch.forEach((item,i) => { 
+                            var delay = i * .5;
+                            var index = experienceList.indexOf(item);
+                            var timelineId = "experienceTL_2_" + index;
+                            var tl = gsap.getById(timelineId);
+                            //necessary because technically timeline has already started
+                            tl.delay(delay).restart(true);
+                        })
+                    }
+                });
+
+                let educationList = gsap.utils.toArray("#education_list .school");
+                let educationListTl = [];
+                //Create initial state / tl for work items
+                educationList.forEach((item,i) => {
+                    var text = $(item).find('p');
+                    var timelineId = "educationTL_" + i;
+
+                    var tl = gsap.timeline({id:timelineId, paused:true});
+                        tl
+                        .from(text, {duration:1, stagger:.25, x:-40, opacity:0, ease:"back.out(1.5)"})
+
+                    educationListTl.push(tl);
+                });
+                //Create ScrollTrigger for experience items
+                let educationListST = ScrollTrigger.batch(educationList, {
+                    start:"top center",
+                    once:true,
+                    onEnter: batch => {
+                        batch.forEach((item,i) => { 
+                            var delay = i * .5;
+                            var index = educationList.indexOf(item);
+                            var timelineId = "educationTL_" + index;
+                            var tl = gsap.getById(timelineId);
+                            //necessary because technically timeline has already started
+                            tl.delay(delay).restart(true);
+                        })
+                    }
+                });
+
+                let workItems1 = gsap.utils.toArray("#two .anim1 .work-item");
+                let workItems1Tl = [];
+                //Create initial state / tl for work items
+                workItems1.forEach((item,i) => {
                     var image = $(item).find('a')[0];
                     var topText = $(item).find('h3')[0];
                     var bottomText = $(item).find('p')[0];
-                    var timelineId = "timeline_" + i;
+                    var timelineId = "workTL_1_" + i;
 
                     var tl = gsap.timeline({id:timelineId, paused:true});
                         tl
@@ -174,31 +275,65 @@
                         .from(topText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
                         .from(bottomText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
                     
-                    workItemsTl.push(tl);
+                    workItems1Tl.push(tl);
                 });
                 //Create ScrollTrigger for work items
-                ScrollTrigger.batch(workItems, {
+                let workItems1ST = ScrollTrigger.batch(workItems1, {
                     start:"top center",
+                    once:true,
                     onEnter: batch => {
-                        batch.forEach((item,i) => {                            
+                        batch.forEach((item,i) => {
                             var delay = i * .5;
-                            var index = workItems.indexOf(item);
-                            var timelineId = "timeline_" + index;
+                            var index = workItems1.indexOf(item);
+                            var timelineId = "workTL_1_" + index;
                             var tl = gsap.getById(timelineId);
                             //necessary because technically timeline has already started
                             tl.delay(delay).restart(true);
-                        });
+                        })
                     }
                 });
     
-                var anim4 = gsap.timeline({scrollTrigger: {
+                let workItems2 = gsap.utils.toArray("#two .anim2 .work-item");
+                let workItems2Tl = [];
+                //Create initial state / tl for work items
+                workItems2.forEach((item,i) => {
+                    var image = $(item).find('a')[0];
+                    var topText = $(item).find('h3')[0];
+                    var bottomText = $(item).find('p')[0];
+                    var timelineId = "workTL_2_" + i;
+
+                    var tl = gsap.timeline({id:timelineId, paused:true});
+                        tl
+                        .set(image, {transformPerspective:800})
+                        .from(image, {duration:1.25, rotationX:-360, scale:0, opacity:0, ease:"back.out(1.5)"})
+                        .from(topText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
+                        .from(bottomText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
+                    
+                    workItems2Tl.push(tl);
+                });
+                //Create ScrollTrigger for work items
+                let workItems2ST = ScrollTrigger.batch(workItems2, {
+                    start:"top center",
+                    once:true,
+                    onEnter: batch => {
+                        batch.forEach((item,i) => {
+                            var delay = i * .5;
+                            var index = workItems2.indexOf(item);
+                            var timelineId = "workTL_2_" + index;
+                            var tl = gsap.getById(timelineId);
+                            //necessary because technically timeline has already started
+                            tl.delay(delay).restart(true);
+                        })
+                    }
+                });
+    
+                var anim3_1 = gsap.timeline({scrollTrigger: {
                     trigger: "#three",
                     start: "bottom bottom"
                 }});
-                anim4
-                .from("#three .anim4 h2, #three .anim4 p", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"})
+                anim3_1
+                .from("#three .anim1 h2, #three .anim1 h3", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"})
                 .from("#three .row > .col-12-small", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.75")
-    
     
                 //Get all scrolltriggers and disable them so they don't launch immediately
                 var stArray = ScrollTrigger.getAll()
@@ -237,12 +372,94 @@
                 //waypoints();
                 
                 //Get all scrolltriggers and enable them after 500ms so they don't launch immediately
-                ScrollTrigger.refresh();
                 setTimeout(function() {
                     stArray.forEach(function(ST) {
                         ST.enable()
                     });
+                    //last function to run
+                    finalFunction();
                 }, 250);
+
+                //Click Section 1
+                $("#one .actions").on( "click", function() {
+
+                  if ($("#one .actions").hasClass("closed")) {
+                      
+                      anim1_3.scrollTrigger.enable();
+                      anim1_4.scrollTrigger.enable();
+                      experienceLocationST.forEach(st => st.enable());
+                      experienceListST.forEach(st => st.enable());
+                      educationListST.forEach(st => st.enable());
+                      
+                      $("#one .actions").removeClass("closed");
+                      $("#one .actions").addClass("opened");
+
+                  } else {
+                      
+                      anim1_3.scrollTrigger.disable();
+                      anim1_4.scrollTrigger.disable();
+                      experienceLocationST.forEach(st => st.disable());
+                      experienceListST.forEach(st => st.disable());
+                      educationListST.forEach(st => st.disable());
+                      
+                      $("#one .actions").addClass("closed");
+                      $("#one .actions").removeClass("opened");
+                      
+                      gsap.to(window, { duration: .5, scrollTo: {y: "#one .actions", offsetY:25} });
+
+                  }
+                
+                  $("#one .anim3, #one .anim4").toggleClass("hide");
+                  ScrollTrigger.refresh();
+                    
+                });
+                
+                //Click Section 2
+                $("#two .actions").on( "click", function() {
+
+                  if ($("#two .actions").hasClass("closed")) {
+                      
+                      workItems2ST.forEach(st => st.enable());
+                      
+                      $("#two .actions").removeClass("closed");
+                      $("#two .actions").addClass("opened");
+
+                  } else {
+                      
+                      workItems2ST.forEach(st => st.enable());
+                      
+                      $("#two .actions").addClass("closed");
+                      $("#two .actions").removeClass("opened");
+                      
+                      gsap.to(window, { duration: .5, scrollTo: {y: "#two .actions", offsetY:25} });
+
+                  }
+                
+                  $("#two .anim2").toggleClass("hide");
+                  ScrollTrigger.refresh();
+                    
+                });
+                
+                //last function to run
+                function finalFunction() {
+                    
+                    //Need to be put here so it doesn't break scrollTrigger
+                    
+                    //Section 1
+                    anim1_3.scrollTrigger.disable();
+                    anim1_4.scrollTrigger.disable();
+                    experienceLocationST.forEach(st => st.disable());
+                    experienceListST.forEach(st => st.disable());
+                    educationListST.forEach(st => st.disable());
+                    
+                    $("#one .anim3, #one .anim4").addClass("hide");
+                    
+                    //Section 2
+                    workItems2ST.forEach(st => st.disable());
+                    $("#two .anim2").addClass("hide");
+                    
+                    ScrollTrigger.refresh();
+                }
 
 			});
 

@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+.scene p, .scene li, #nav_content p {line-height: 140%;}
+
+p, ul, ol, td, #quiz-body, #nav_content, #quiz_box {direction: rtl;}
+
+.nav_item:not(.youMayNotPass):hover {transform: translate3d(-10px, 0px, 10px);}
+
+.scene ul li {
+    list-style-type: none !important; 
+}
+
+.scene ul li:before {
+    content: "•";
+    padding-left: 15px;
+    margin-right: -1em;
+}
+
+/* Prevents unecessary scrollbars from appearing,
+   though unsure why they're appearing in the first place */
+#textbox_2_0_0 .bottom_cont .row .scroll {
+    overflow-y: unset;
+}

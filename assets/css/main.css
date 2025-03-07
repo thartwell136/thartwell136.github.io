@@ -136,7 +136,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #787878;
-		font-weight: 400;
+		font-weight: bold;
 		line-height: 1em;
 		margin: 0 0 1em 0;
 	}
@@ -244,6 +244,56 @@ input, select, textarea {
 /* Custom */
 #skills_list ul {
     margin-bottom:0;
+}
+#skills_list {
+    margin-bottom:2rem;
+}
+
+@media screen and (max-width: 1800px) {
+  .row {
+      margin-left: -1.5em;
+  }
+  .row > * {
+    padding: 0 0 0 1.5em;
+  }
+}
+
+.nomargin {
+    margin:0;
+}
+
+.bold {
+    font-weight:bold;
+}
+
+.itl {
+    font-style:italic;
+}
+
+.topmargin {
+    margin-top:2rem;
+}
+
+.hide {
+    display:none !important;
+}
+
+#one .actions.closed .open, #one .actions.opened .close {
+    display:block;
+}
+#one .actions.opened .open, #one .actions.closed .close {
+    display:none;
+}
+
+#two .actions.closed .open, #two .actions.opened .close {
+    display:block;
+}
+#two .actions.opened .open, #two .actions.closed .close {
+    display:none;
+}
+
+.regular {
+    font-weight:normal !important;
 }
 
 /* Container */
@@ -2693,14 +2743,14 @@ input, select, textarea {
 	#main {
 		margin-left: 35%;
 		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		padding: 6em 3em 3em 3em;
 		width: calc(100% - 35%);
 	}
 
 		#main > section {
 			border-top: solid 2px #efefef;
-			margin: 4em 0 0 0;
-			padding: 4em 0 0 0;
+			margin: 3em 0 0 0;
+			padding: 3em 0 0 0;
 		}
 
 			#main > section:first-child {
@@ -2918,9 +2968,9 @@ input, select, textarea {
 			line-height: 4em;
 			opacity: 1;
 			position: absolute;
-			right: -34px;
+			right: -44px;
 			text-align: center;
-			top: -34px;
+			top: -24px;
 			width: 34px;
 			z-index: 2;
 		}

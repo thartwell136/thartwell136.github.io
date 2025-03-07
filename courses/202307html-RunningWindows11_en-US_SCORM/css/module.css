@@ -1,0 +1,960 @@
+/* ----------------------------------
+        MODULE STYLES
+---------------------------------- */
+
+:root {
+    --sample: #fff;
+}
+
+/* FONT STYLES --------------------------------------------------------------------------- */
+
+.scene {
+    color: #fff;   
+}
+
+.scene p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 130%;
+}
+
+.scene ul {
+    margin-left: 35px;
+    padding-left: 15px;
+}
+
+.scene ul li {
+    margin-bottom: 10px;
+    list-style: disc;
+    line-height: 130%;
+}
+
+/* OFFICIAL IREP COLORS */
+.intel_blue, .blue { color:#0071C5; }
+.white { color:#FFFFFF; }
+.black { color:#000000; }
+.dk_blue { color:#003C71; }
+.sky_blue { color:#00AEFF; }
+.lt_blue { color:#69D6FF; }
+.yellow { color:#FFC50C;}
+.lt_yellow { color:#F3D54E; }
+.green { color:#C4D600; }
+.orange { color:#FFA300; }
+.red_orange { color:#FC4C02; }
+
+
+.bg_black     { background-color:#000; }
+.bg_white     { background-color:#fff; }
+
+
+/* MISC ----------------------------------------------------------------- */
+
+#main_wrapper table {table-layout:fixed;}
+
+.bgStyle {
+    position: absolute;
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+    top: 0px;
+    left: 0px;
+}
+
+.nomargin { margin: 0 !important; }
+.notopmargin, .nomargintop  {margin-top: 0 !important;}
+.nobottommargin, .nomarginbottom {margin-bottom: 0 !important;}
+
+.vc {
+    display: flex;
+    align-items: center;
+}
+
+.hc {
+    display: flex;
+    justify-content: center;
+}
+
+.vhc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show_on_HD {display: block;}
+.show_on_MOB {display: none;}
+
+
+body {
+    --max-inner-width:1660px;
+}
+
+/* SCENE 1 START --------------------------------------------------------------------------- */
+
+/* Slide 1 */
+
+#background_1_0 {
+    background: url(../images/0_BG_HD.jpg) 50% 50% / contain no-repeat;
+}
+
+.textBoxStyle {
+    position:absolute;
+    top:0;
+    left: 950px;
+    width: 850px;
+    height:1080px;
+}
+.textBoxStyle > .inner {
+    width:44em;
+}
+
+p.header {
+    line-height: 120%;
+    text-shadow:2px 2px 5px rgba(0,0,0,.75);
+}
+p.header {
+    display: inline;
+    padding-inline:10px;
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;    
+}
+.pink_header {
+    background-image: linear-gradient(rgba(0,0,0,0) 53%, #ff0089 53%, #ff0089 90%, rgba(0,0,0,0) 90%);
+}
+.blue_header {
+    background-image: linear-gradient(rgba(0,0,0,0) 53%, #00bfbf 53%, #00bfbf 90%, rgba(0,0,0,0) 90%);
+}
+.purple_header {
+    background-image: linear-gradient(rgba(0,0,0,0) 53%, #c001ff 53%, #c001ff 90%, rgba(0,0,0,0) 90%);
+}
+.blue_header {
+    background-image: linear-gradient(rgba(0,0,0,0) 53%, #00e0dd 53%, #00e0dd 90%, rgba(0,0,0,0) 90%);
+}
+
+.imageBoxStyle .arch_wrapper {
+    perspective:2000px;
+}
+.imageBoxStyle .arch {
+    position:absolute;
+    top: -60px;
+    left: 140px;
+    width:748px;
+    height:1153px;
+    transform-style: preserve-3d;
+}
+.imageBoxStyle .arch img, .imageBoxStyle .arch svg {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+.imageBoxStyle .arch svg {
+    overflow:visible;
+    top:-4px;
+    left:-4px;
+}
+
+.imageBoxStyle .arch svg .blue_path {
+    filter: drop-shadow(0px 1px 3px #01ffff);
+}
+.ios .imageBoxStyle .arch svg .blue_path {
+    filter:none !important;
+}
+.imageBoxStyle .arch svg .pink_path {
+    filter: drop-shadow(0px 1px 3px #ff0089);
+}
+.ios .imageBoxStyle .arch svg .pink_path {
+    filter:none !important;
+}
+
+.burstStyle1a {
+    position:absolute;
+    width:279px;
+    height:333px;
+}
+.burstStyle1b {
+    position:absolute;
+    width:252px;
+    height:220px;
+}
+.burst_cont_1 img, .burst_cont_2 img {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+#imagebox_1_0_0 .laptop {
+    position:absolute;
+    top: 100px;
+    left: -90px;
+    width:1027px;
+    height:892px;
+}
+#imagebox_1_0_0 .burst_cont_1 {
+    top: 860px;
+    left: 550px;
+}
+#imagebox_1_0_0 .burst_cont_2 {
+    top: 30px;
+    left: 750px;
+}
+
+/* Slide 2 */
+#swish_1, #swish_1 .bg {
+    position:absolute;
+    top:310px;
+    left:-20px;
+    width:1956px;
+    height:822px;
+    overflow:hidden;
+}
+#swish_1 .bg {
+    top:0;
+    left:0;
+    background: url(../images/2-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+#textbox_1_0_1 > .inner, #textbox_1_0_1 .bottom_cont {
+    width:100%;
+}
+#textbox_1_0_1 .bottom_cont {
+    justify-content:space-between;
+}
+#textbox_1_0_1 .top_text {
+    width:90em;
+    margin:0 auto 100px;
+    text-align:center;
+    max-width:var(--max-inner-width);
+}
+#textbox_1_0_1 .left_half, #textbox_1_0_1 .right_half {
+    position:relative;
+    width:931px;
+    height:539px;
+}
+#textbox_1_0_1 .arch_wrapper {
+    perspective:2000px;
+}
+#textbox_1_0_1 .arch {
+    transform-style: preserve-3d;
+}
+#textbox_1_0_1 .arch, #textbox_1_0_1 .arch img, #textbox_1_0_1 .arch svg, #textbox_1_0_1 .arch_wrapper {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+#textbox_1_0_1 .arch svg {
+    overflow:visible;
+    left: -16px;
+    top: -17px;
+}
+#textbox_1_0_1 .right_half svg {
+    left: 19px;
+    transform:scale(-1,1);
+}
+#textbox_1_0_1 .left_half .text, #textbox_1_0_1 .right_half .text {
+    position:relative;
+    width:30em;
+    max-width:90%;
+    text-align:center;
+}
+
+/* Slide 3 */
+#textbox_1_0_2 {
+    text-align:center;
+}
+#textbox_1_0_2 > .inner {
+    width:54em;
+    max-width:900px;
+}
+#textbox_1_0_2 .top_text {
+    width:36em;
+    margin:0 auto 40px;
+}
+#textbox_1_0_2 .box {
+    width:100%;
+    padding:40px;
+    border:3px solid #ff0089;
+    box-shadow:0 0 6px #ff0089;
+    margin-top:20px;
+    box-sizing:border-box;
+}
+
+#imagebox_1_0_1 .burst_cont_1 {
+    top: 700px;
+    left: 550px;
+}
+#imagebox_1_0_1 .burst_cont_2 {
+    top: 40px;
+    left: 250px;
+    transform: rotate(-90deg);
+}
+
+/* Slide 4 */
+#swish_2a, #swish_2a .bg {
+    position:absolute;
+    top: 690px;
+    left: -160px;
+    width:477px;
+    height:320px;
+    overflow:hidden;
+}
+#swish_2a .bg {
+    top:0;
+    left:0;
+    background: url(../images/4-Swish2_HD.png) 50% 50% / contain no-repeat;
+}
+#swish_2b, #swish_2b .bg {
+    position:absolute;
+    top: 440px;
+    left: 810px;
+    width:1587px;
+    height:665px;
+    overflow:hidden;
+}
+#swish_2b .bg {
+    top:0;
+    left:0;
+    background: url(../images/4-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+
+#imagebox_1_0_2 {
+    perspective:2000px;
+}
+#imagebox_1_0_2 .person {
+    position:absolute;
+    top: 110px;
+    left: 40px;
+    width:1233px;
+    height:979px;
+    transform-style:preserve-3d;
+}
+.burstStyle2a {
+    position:absolute;
+    width:214px;
+    height:200px;
+}
+.burstStyle2b {
+    position:absolute;
+    width:327px;
+    height:173px;
+}
+#imagebox_1_0_2 .burst_cont_1 {
+    top: 180px;
+    left: 200px;
+}
+#imagebox_1_0_2 .burst_cont_2 {
+    top: 950px;
+    left: 1040px;
+}
+
+#textbox_1_0_3 {
+    position: absolute;
+    top: 0;
+    left: 730px;
+    width: 1180px;
+    height: 430px;
+}
+#textbox_1_0_3 .inner {
+    width: clamp( 700px, calc(1050px - (1050 - 700) * ((100vw - 1024px) / (1920 - 1024))), 1050px );
+}
+
+/* Slide 5 */
+.bottomBgStyle .swish, .bottomBgStyle .swish .bg {
+    position:absolute;
+    top: -40px;
+    left: -20px;
+    width:1959px;
+    height:100px;
+    overflow:hidden;
+}
+.bottomBgStyle .swish .bg {
+    position:absolute;
+    top:0;
+    left:0;
+}
+.bottomBgStyle .swish_2 {
+    right:-20px;
+    left:unset;
+}
+.bottomBgStyle .swish_2 .bg {
+    position:absolute;
+    top:0;
+    right:0;
+    left:unset;
+}
+#imagebox_1_0_3 .swish .bg {
+    background: url(../images/5-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+.bottomBgStyle .swish_2 {
+    top:680px;
+}
+.bottomBgStyle {
+    position:absolute;
+    bottom:-70px;
+    left:0;
+    width:1920px;
+    height:770px;
+}
+.bottomBgStyle .background {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+#imagebox_1_0_3 .background {
+    background: url(../images/5-Michael_HD.png) 50% 50% / contain no-repeat;
+}
+#imagebox_1_0_3 .burst_cont_1 {
+    top: 515px;
+    left: -30px;
+    width:347px;
+    height:276px;
+}
+#imagebox_1_0_3 .burst_cont_2 {
+    top: 145px;
+    left: 725px;
+    width:198px;
+    height:222px;
+}
+
+
+.topTextStyle, .bottomTextStyle {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 1920px;
+    height: 340px;
+    text-align: center;
+}
+.topTextStyle > .inner, .bottomTextStyle > .inner {
+    width: clamp( 500px, calc(1000px - (1000 - 500) * ((100vw - 1024px) / (1920 - 1024))), 1000px );
+}
+.bottomTextStyle {
+    top:auto;
+    bottom:0;
+    height:280px;
+}
+
+/* Slide 6 */
+#textbox_1_0_5 > .inner {
+    width:55em;
+}
+
+/* Slide 7-8 */
+#imagebox_1_0_4 .swish, #imagebox_1_0_4 .swish .bg {
+    position:absolute;
+    top: 550px;
+    right: -70px;
+    width:1068px;
+    height:448px;
+    overflow:hidden;
+}
+#imagebox_1_0_4 .swish .bg {
+    top:0;
+    right:0;
+    background: url(../images/6-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+.imageBoxStyle.reverse .arch {
+    left:910px;
+}
+.textBoxStyle.reverse {
+    left:130px;
+    width:640px;
+    jusifty-content:flex-start;
+}
+.textBoxStyle.reverse > .inner {
+    width:100%;
+}
+#textbox_1_0_7 p.p20 b {
+    color:#c001ff;
+    font-style:italic;
+}
+
+/* Slide 9 */
+#imagebox_1_0_5 .laptop {
+    position:absolute;
+    top: 140px;
+    left: 840px;
+    width: 943px;
+    height: 883px;
+}
+#imagebox_1_0_5 .burst_cont_1 {
+    top: 30px;
+    left: 1330px;
+    width:361px;
+    height:262px;
+}
+#imagebox_1_0_5 .burst_cont_2 {
+    top: 650px;
+    left: 820px;
+    width:211px;
+    height:227px;
+}
+
+/* Slide 11 */
+#swish_4, #swish_4 .bg {
+    position:absolute;
+    top: 490px;
+    left: -40px;
+    width:2049px;
+    height:523px;
+    overflow:hidden;
+}
+#swish_4 .bg {
+    top:0;
+    left:0;
+    background: url(../images/8-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+#gamer_1 {
+    perspective:2000px;
+}
+#gamer_1 .person {
+    position:absolute;
+    top: 110px;
+    left: 910px;
+    width:962px;
+    height:977px;
+    transform-perspective:preserve-3d;
+}
+.burstStyle3a {
+    position:absolute;
+    width:376px;
+    height:372px;
+}
+.burstStyle3b {
+    position:absolute;
+    width:279px;
+    height:303px;
+}
+#gamer_1 .burst_cont_1 {
+    top: 120px;
+    left: 1600px;
+}
+#gamer_1 .burst_cont_2 {
+    top: 670px;
+    left: 720px;
+}
+#textbox_1_1_0 {
+    position: absolute;
+    top: 0;
+    left: 130px;
+    width: 790px;
+    height: 500px;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+#textbox_1_1_0 .inner {
+    width:40em;
+}
+
+/* Slide 12-13 */
+#imagebox_1_0_6 .swish {
+    top: -45px;
+    width: 1961px;
+    height: 101px;
+}
+#imagebox_1_0_6 .swish_2 {
+    top:680px;
+}
+#imagebox_1_0_6 .swish .bg {
+    background: url(../images/9-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+#imagebox_1_0_6 .background {
+    background: url(../images/9-Jillian_HD.png) 50% 50% / contain no-repeat;
+}
+#imagebox_1_0_6 .burstStyle1a {
+    top: 340px;
+    left: 1530px;
+    width:194px;
+    height:253px;
+}
+#imagebox_1_0_6 .burstStyle1b {
+    top: 140px;
+    left: 140px;
+    width:271px;
+    height:388px;
+}
+#textbox_1_1_1 > .inner {
+    width:64em;
+}
+
+#imagebox_1_0_6 .badge {
+    position:absolute;
+    top: 380px;
+    left: 740px;
+    width: 416px;
+    height: 461px;
+}
+#textbox_1_1_2 p.p20 b {
+    color:#ff0089;
+    font-style:italic;
+}
+#textbox_1_1_2 > .inner {
+    width:58em;
+}
+.burst_cont_3 img, .burst_cont_4 img {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+#imagebox_1_0_6 .burst_cont_3 {
+    top: 240px;
+    left: 1110px;
+}
+#imagebox_1_0_6 .burst_cont_4 {
+    top: 310px;
+    left: 470px;
+}
+#imagebox_1_0_6 .burst_cont_4 img {
+    transform: rotate(-30deg);
+}
+
+/* Slide 14-15 */
+#imagebox_1_0_7 .laptop {
+    position:absolute;
+    top: 190px;
+    left: 840px;
+    width: 903px;
+    height: 815px;
+}
+#imagebox_1_0_7 .burstStyle1a {
+    top: 790px;
+    left: 1580px;
+    width:262px;
+    height:371px;
+}
+#imagebox_1_0_7 .burstStyle1b {
+    top: 150px;
+    left: 780px;
+    width:226px;
+    height:211px;
+}
+
+/* Slide 16 */
+#imagebox_1_0_8 .swish, #imagebox_1_0_8 .swish .bg {
+    position:absolute;
+    top: 760px;
+    right: -190px;
+    width:1476px;
+    height:305px;
+    overflow:hidden;
+}
+#imagebox_1_0_8 .swish .bg {
+    top:0;
+    right:0;
+    background: url(../images/12-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+
+/* Slide 17 */
+.design {
+    position:relative;
+    margin:30px 0;
+}
+.design p {
+    margin-inline-start:25px;
+    text-shadow:2px 2px 5px rgba(0,0,0,.75);
+}
+.design p b {
+    font-size:1.3em;
+}
+.design::before {
+    content:"";
+    position:absolute;
+    top:0;
+    inline-start:0;
+    width:3px;
+    height:100%;
+    background:#ff0089;
+    box-shadow:0 0 6px #ff0089;
+    overflow:visible;
+}
+
+/* Slide 18 */
+#swish_5a, #swish_5a .bg {
+    position:absolute;
+    top: 770px;
+    left: 0px;
+    width:314px;
+    height:164px;
+    overflow:hidden;
+}
+#swish_5a .bg {
+    top:0;
+    left:0;
+    background: url(../images/13-Swish2_HD.png) 50% 50% / contain no-repeat;
+}
+#swish_5b, #swish_5b .bg {
+    position:absolute;
+    top: 560px;
+    left: 840px;
+    width:1123px;
+    height:471px;
+    overflow:hidden;
+}
+#swish_5b .bg {
+    top:0;
+    left:0;
+    background: url(../images/13-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+
+#imagebox_1_0_9 {
+    perspective:2000px;
+}
+#imagebox_1_0_9 .person {
+    position:absolute;
+    top: 10px;
+    left: 50px;
+    width:894px;
+    height:1075px;
+    transform-perspective:preserve-3d;
+}
+.burstStyle4a {
+    position:absolute;
+    width:268px;
+    height:265px;
+}
+.burstStyle4b {
+    position:absolute;
+    width:318px;
+    height:335px;
+}
+#imagebox_1_0_9 .burst_cont_1 {
+    top: 200px;
+    left: 40px;
+}
+#imagebox_1_0_9 .burst_cont_2 {
+    top: 750px;
+    left: 960px;
+}
+
+#textbox_1_1_7 {
+    position: absolute;
+    top: 0;
+    left: 730px;
+    width: 1180px;
+    height: 430px;
+    align-items: flex-end;
+}
+#textbox_1_1_7 .inner {
+    width: clamp( 700px, calc(950px - (950 - 700) * ((100vw - 1024px) / (1920 - 1024))), 950px );
+}
+
+/* Slide 19-20 */
+#imagebox_1_1_0 .swish {
+    top:-45px;
+    left:-15px;
+    width: 1979px;
+    height: 101px;
+}
+#imagebox_1_1_0 .swish_2 {
+    top:680px;
+    left:unset;
+}
+#imagebox_1_1_0 .swish .bg {
+    background: url(../images/14-Swish_HD.png) 50% 50% / contain no-repeat;
+}
+#imagebox_1_1_0 .background {
+    background: url(../images/14-Ravi_HD.png) 50% 50% / contain no-repeat;
+}
+#imagebox_1_1_0 .burstStyle1a {
+    top: 140px;
+    left: 510px;
+    width:271px;
+    height:388px;
+}
+#imagebox_1_1_0 .burstStyle1b {
+    top: 120px;
+    left: 1320px;
+    width:194px;
+    height:253px;
+}
+
+#textbox_1_1_8 > .inner {
+    width:57em;
+}
+#textbox_1_1_9 > .inner {
+    width:55em;
+}
+
+/* Slide 21-22 */
+#imagebox_1_1_1 .laptop {
+    position:absolute;
+    top: 80px;
+    left: 770px;
+    width: 1150px;
+    height: 899px;
+}
+#imagebox_1_1_1 .burstStyle1a {
+    top: 130px;
+    left: 810px;
+    width:226px;
+    height:211px;
+}
+#imagebox_1_1_1 .burstStyle1b {
+    top: 780px;
+    left: 1630px;
+    width:262px;
+    height:371px;
+}
+
+/* Slide 23-24 */
+#textbox_1_2_2, #textbox_1_2_3 {
+    left:1050px;
+    width:750px;
+}
+#textbox_1_2_2 > .inner, #textbox_1_2_3 > .inner {
+    width:33em;
+}
+#imagebox_1_1_2 .burstStyle1a {
+    top: 490px;
+    left: 770px;
+    width:262px;
+    height:371px;
+}
+#imagebox_1_1_2 .burstStyle1b {
+    top: 70px;
+    left: 240px;
+    width:226px;
+    height:211px;
+}
+
+/* SCENE 1 END  --------------------------------------------------------------------------- */
+
+/* QUIZ SCENE START --------------------------------------------------------------------------- */
+
+#imagebox_quiz .person {
+    position:absolute;
+    top: 10px;
+    left: 50px;
+    width:894px;
+    height:1075px;
+}
+.burstStyle5a {
+    position:absolute;
+    width:298px;
+    height:334px;
+}
+.burstStyle5b {
+    position:absolute;
+    width:226px;
+    height:218px;
+}
+#imagebox_quiz .burst_cont_1 {
+    top: 660px;
+    left: 1590px;
+}
+#imagebox_quiz .burst_cont_2 {
+    top: 0px;
+    left: 880px;
+}
+
+#quiz_box {
+    position:relative;
+    margin-top: 25px; 
+}
+#quizTitleButton p {
+    cursor: pointer;
+    background: #00e0dd;
+    color:#ff0089;
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    line-height: 100%;
+}
+#legalButton {
+    cursor: pointer;
+    display: inline-block;
+}
+#legalButton p {
+    text-decoration: underline;
+}
+
+@media (hover: hover) {
+    #quizTitleButton p {
+        transition: color 0.25s ease, background 0.25s ease
+    }
+
+    #quizTitleButton p:hover {
+        background: #ff0089;
+        color: #00e0dd;
+    }
+}
+
+
+
+/* QUIZ END  --------------------------------------------------------------------------- */
+
+
+/* MEDIA QUERIES--------------------------------------------------------------------------- */
+
+/* FONT SIZE ADJUST-------------------------*/
+
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+	
+	body {
+		/* 
+		https://css-tricks.com/snippets/css/fluid-typography/
+		Minimum font-size:16px
+		Maximum font-size:24px
+		Minimum screen width: 1024px
+		Maximum screen width: 1920px		
+		*/
+		font-size: calc(21px - (21 - 16) * ((100vw - 1024px) / (1920 - 1024)));
+	}
+	
+}
+
+/*FOR MOBILE--------------------------*/
+
+@media only screen and (max-width: 1024px) {
+	
+	body {
+        font-size: 21px;
+    }
+
+    .show_on_MOB {display: block;}
+    .show_on_HD {display: none;}
+    
+    #background_1_0 {
+        background: url(../images/0_BG_MOB.jpg) 50% 50% / contain no-repeat;
+    }
+    #swish_1 .bg {
+        background: url(../images/2-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #swish_2a .bg {
+        background: url(../images/4-Swish2_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #swish_2b .bg {
+        background: url(../images/4-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #imagebox_1_0_3 .swish .bg {
+        background: url(../images/5-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #imagebox_1_0_3 .background {
+        background: url(../images/5-Michael_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #imagebox_1_0_4 .swish .bg {
+        background: url(../images/6-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #swish_4 .bg {
+        background: url(../images/8-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #imagebox_1_0_6 .swish .bg {
+        background: url(../images/9-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #imagebox_1_0_6 .background {
+        background: url(../images/9-Jillian_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #imagebox_1_0_8 .swish .bg {
+        background: url(../images/12-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #swish_5a .bg {
+        background: url(../images/13-Swish2_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #swish_5b .bg {
+        background: url(../images/13-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #imagebox_1_1_0 .swish .bg {
+        background: url(../images/14-Swish_MOB.png) 50% 50% / contain no-repeat;
+    }
+    #imagebox_1_1_0 .background {
+        background: url(../images/14-Ravi_MOB.png) 50% 50% / contain no-repeat;
+    }
+
+}
+
