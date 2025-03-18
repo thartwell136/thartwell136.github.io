@@ -270,22 +270,28 @@
                         })
                     }
                 });
+    
+                var work_button_tl = gsap.timeline({paused:true});
+                work_button_tl
+                    .from("#two .actions", {duration:1.25, x:-40, opacity:0, ease:"back.out(2)"})
 
                 let workItems1 = gsap.utils.toArray("#two .work_anim_1 .work-item");
                 let workItems1Tl = [];
                 //Create initial state / tl for work items
                 workItems1.forEach((item,i) => {
                     var image = $(item).find('a')[0];
-                    var topText = $(item).find('h3')[0];
-                    var bottomText = $(item).find('p')[0];
+                    var titleText = $(item).find('h3')[0];
+                    var descText = $(item).find('p')[0];
+                    var authorText = $(item).find('p')[1];
                     var timelineId = "workTL_1_" + i;
 
                     var tl = gsap.timeline({id:timelineId, paused:true});
                         tl
                         .set(image, {transformPerspective:800})
                         .from(image, {duration:1.25, rotationX:-360, scale:0, opacity:0, ease:"back.out(1.5)"})
-                        .from(topText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
-                        .from(bottomText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
+                        .from(titleText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
+                        .from(descText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
+                        .from(authorText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
                     
                     workItems1Tl.push(tl);
                 });
@@ -298,9 +304,18 @@
                             var delay = i * .5;
                             var index = workItems1.indexOf(item);
                             var timelineId = "workTL_1_" + index;
-                            var tl = gsap.getById(timelineId);
-                            //necessary because technically timeline has already started
-                            tl.delay(delay).restart(true);
+                            var tl = gsap.getById(timelineId);                            
+                            var last = workItems1Tl.length-1;
+                            
+                            if (index == last) {
+                                //brings in the See More button
+                                tl.delay(delay).restart(true).eventCallback('onComplete', function() {
+                                    work_button_tl.play();
+                                });
+                            } else {
+                                //necessary because technically timeline has already started
+                                tl.delay(delay).restart(true);
+                            }
                         })
                     }
                 });
@@ -310,16 +325,18 @@
                 //Create initial state / tl for work items
                 workItems2.forEach((item,i) => {
                     var image = $(item).find('a')[0];
-                    var topText = $(item).find('h3')[0];
-                    var bottomText = $(item).find('p')[0];
+                    var titleText = $(item).find('h3')[0];
+                    var descText = $(item).find('p')[0];
+                    var authorText = $(item).find('p')[1];
                     var timelineId = "workTL_2_" + i;
 
                     var tl = gsap.timeline({id:timelineId, paused:true});
                         tl
                         .set(image, {transformPerspective:800})
                         .from(image, {duration:1.25, rotationX:-360, scale:0, opacity:0, ease:"back.out(1.5)"})
-                        .from(topText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
-                        .from(bottomText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
+                        .from(titleText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
+                        .from(descText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
+                        .from(authorText, {duration:1.25, stagger:1, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.15")
                     
                     workItems2Tl.push(tl);
                 });
@@ -344,7 +361,7 @@
                     start: "bottom bottom"
                 }});
                 work_tl
-                .from("#three .work_anim_1 h2, #three .work_anim_1 h3", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"})
+                .from("#three .anim1 h2, #three .anim1 h3", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"})
                 .from("#three .row > .col-12-small", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.75")
     
                 //Get all scrolltriggers and disable them so they don't launch immediately
