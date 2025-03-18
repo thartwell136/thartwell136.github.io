@@ -129,48 +129,60 @@
                   y: 80,
                   rotationX: 180,
                   transformOrigin: "0% 50% -50",
-                  ease: "back",
+                  ease: "back.out(1)",
                   stagger: 0.01,
                   onComplete:function() {
                       logoRepeat.restart();
                   }
                 }, "<+.5")
     
+                var split2 = new SplitText("#header .inner strong", {type: "words, chars"});
                 var logoRepeat = gsap.timeline({repeat:-1, repeatDelay:10, paused:true});
                     logoRepeat
                     .to("#header .image", {duration:.75, y:20, rotationY:-60, ease:"back.inOut(.75)"})
                     .to("#header .image", {duration:1.25, y:-40, rotationY:360, ease:"back.inOut(1.25)"}, ">-=.25")
                     .to("#header .image", {duration:1.25, y:0, rotationY:0, ease:"back.inOut(1.25)"}, ">-=.25")
+                    .to(split2.chars, {duration:1.25, rotationX:"+=360", ease:"back.inOut(1)", stagger:{amount:1.25}}, ">-2.25")
     
-                var anim1_1 = gsap.timeline({scrollTrigger: {
-                    trigger: "#one .anim1",
+                var summary_tl = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .summary_anim",
                     start: "top center"
                 }});
-                anim1_1
-                .from("#one .anim1 h2", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
-                .from("#one .anim1 p", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"}, "<+.25")
+                summary_tl
+                .from("#one .summary_anim h2", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
+                .from("#one .summary_anim p", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"}, "<+.25")
     
-                var anim1_2 = gsap.timeline({scrollTrigger: {
-                    trigger: "#one .anim2",
+                var resume_tl = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .resume_anim",
                     start: "top center"
                 }});
-                anim1_2
-                .from("#one .anim2 h3", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
-                .from("#one .anim2 li", {duration:1, stagger:.15, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
+                resume_tl
+                .from("#one .resume_anim h3", {duration:1.25, x:40, opacity:0, ease:"back.out(2)"})
+                .from("#one .resume_anim li", {duration:1.25, x:40, stagger:.25, opacity:0, ease:"back.out(2)"}, "<+.25")
     
-                var anim1_3 = gsap.timeline({scrollTrigger: {
-                    trigger: "#one .anim3",
+                var skills_tl = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .skills_anim",
                     start: "top center"
                 }});
-                anim1_3
-                .from("#one .anim3 h3", {duration:1.25, x:-40, opacity:0, ease:"back.out(2)"})
+                skills_tl
+                .from("#one .skills_anim h3", {duration:1.25, y:40, opacity:0, ease:"back.out(2)"})
+                .from("#one .skills_anim li", {duration:1, stagger:.15, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.25")
+                .from("#learn_more", {duration:1, x:40, opacity:0, ease:"back.out(1.5)"}, ">-.75")
     
-                var anim1_4 = gsap.timeline({scrollTrigger: {
-                    trigger: "#one .anim4",
+                var esperience_tl = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .experience_anim",
                     start: "top center"
                 }});
-                anim1_4
-                .from("#one .anim4 h3", {duration:1.25, x:-40, opacity:0, ease:"back.out(2)"})
+                esperience_tl
+                .from("#one .experience_anim h3", {duration:1.25, x:-40, opacity:0, ease:"back.out(2)"})
+    
+                var education_tl = gsap.timeline({scrollTrigger: {
+                    trigger: "#one .education_anim",
+                    start: "top center"
+                }});
+                education_tl
+                education_tl
+                .from("#one .education_anim h3", {duration:1.25, x:-40, opacity:0, ease:"back.out(2)"})
     
                 let experienceLocation = gsap.utils.toArray("#experience_list .workplace");
                 let experienceLocationTl = [];
@@ -259,7 +271,7 @@
                     }
                 });
 
-                let workItems1 = gsap.utils.toArray("#two .anim1 .work-item");
+                let workItems1 = gsap.utils.toArray("#two .work_anim_1 .work-item");
                 let workItems1Tl = [];
                 //Create initial state / tl for work items
                 workItems1.forEach((item,i) => {
@@ -293,7 +305,7 @@
                     }
                 });
     
-                let workItems2 = gsap.utils.toArray("#two .anim2 .work-item");
+                let workItems2 = gsap.utils.toArray("#two .work_anim_2 .work-item");
                 let workItems2Tl = [];
                 //Create initial state / tl for work items
                 workItems2.forEach((item,i) => {
@@ -327,12 +339,12 @@
                     }
                 });
     
-                var anim3_1 = gsap.timeline({scrollTrigger: {
+                var work_tl = gsap.timeline({scrollTrigger: {
                     trigger: "#three",
                     start: "bottom bottom"
                 }});
-                anim3_1
-                .from("#three .anim1 h2, #three .anim1 h3", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"})
+                work_tl
+                .from("#three .work_anim_1 h2, #three .work_anim_1 h3", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"})
                 .from("#three .row > .col-12-small", {duration:1.25, stagger:.25, y:40, opacity:0, ease:"back.out(1.5)"}, "<+.75")
     
                 //Get all scrolltriggers and disable them so they don't launch immediately
@@ -381,35 +393,35 @@
                 }, 250);
 
                 //Click Section 1
-                $("#one .actions").on( "click", function() {
+                $("#learn_more").on( "click", function() {
 
-                  if ($("#one .actions").hasClass("closed")) {
+                  if ($("#learn_more").hasClass("closed")) {
                       
-                      anim1_3.scrollTrigger.enable();
-                      anim1_4.scrollTrigger.enable();
+                      esperience_tl.scrollTrigger.enable();
+                      education_tl.scrollTrigger.enable();
                       experienceLocationST.forEach(st => st.enable());
                       experienceListST.forEach(st => st.enable());
                       educationListST.forEach(st => st.enable());
                       
-                      $("#one .actions").removeClass("closed");
-                      $("#one .actions").addClass("opened");
+                      $("#learn_more").removeClass("closed");
+                      $("#learn_more").addClass("opened");
 
                   } else {
                       
-                      anim1_3.scrollTrigger.disable();
-                      anim1_4.scrollTrigger.disable();
+                      esperience_tl.scrollTrigger.disable();
+                      education_tl.scrollTrigger.disable();
                       experienceLocationST.forEach(st => st.disable());
                       experienceListST.forEach(st => st.disable());
                       educationListST.forEach(st => st.disable());
                       
-                      $("#one .actions").addClass("closed");
-                      $("#one .actions").removeClass("opened");
+                      $("#learn_more").addClass("closed");
+                      $("#learn_more").removeClass("opened");
                       
-                      gsap.to(window, { duration: .5, scrollTo: {y: "#one .actions", offsetY:25} });
+                      gsap.to(window, { duration: .5, scrollTo: {y: "#learn_more", offsetY:25} });
 
                   }
                 
-                  $("#one .anim3, #one .anim4").toggleClass("hide");
+                  $("#one .experience_anim, #one .education_anim").toggleClass("hide");
                   ScrollTrigger.refresh();
                     
                 });
@@ -435,7 +447,7 @@
 
                   }
                 
-                  $("#two .anim2").toggleClass("hide");
+                  $("#two .work_anim_2").toggleClass("hide");
                   ScrollTrigger.refresh();
                     
                 });
@@ -446,17 +458,17 @@
                     //Need to be put here so it doesn't break scrollTrigger
                     
                     //Section 1
-                    anim1_3.scrollTrigger.disable();
-                    anim1_4.scrollTrigger.disable();
+                    esperience_tl.scrollTrigger.disable();
+                    education_tl.scrollTrigger.disable();
                     experienceLocationST.forEach(st => st.disable());
                     experienceListST.forEach(st => st.disable());
                     educationListST.forEach(st => st.disable());
                     
-                    $("#one .anim3, #one .anim4").addClass("hide");
+                    $("#one .experience_anim, #one .education_anim").addClass("hide");
                     
                     //Section 2
                     workItems2ST.forEach(st => st.disable());
-                    $("#two .anim2").addClass("hide");
+                    $("#two .work_anim_2").addClass("hide");
                     
                     ScrollTrigger.refresh();
                 }

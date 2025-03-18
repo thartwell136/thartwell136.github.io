@@ -278,10 +278,10 @@ input, select, textarea {
     display:none !important;
 }
 
-#one .actions.closed .open, #one .actions.opened .close {
+#learn_more.closed .open, #learn_more.opened .close {
     display:block;
 }
-#one .actions.opened .open, #one .actions.closed .close {
+#learn_more.opened .open, #learn_more.closed .close {
     display:none;
 }
 
@@ -2742,7 +2742,7 @@ input, select, textarea {
 
 	#main {
 		margin-left: 35%;
-		max-width: 54em;
+		max-width: 60em;
 		padding: 6em 3em 3em 3em;
 		width: calc(100% - 35%);
 	}
